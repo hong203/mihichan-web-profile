@@ -9,11 +9,12 @@
   padding: 0.5rem;
   text-align: center;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: linear-gradient(135deg, #ffe4e1, #e0f6ff);
+  background: linear-gradient(135deg, #f5f5dc, #daa520, #cd853f);
   border-radius: 0;
   box-shadow: none;
   min-height: 100vh;
   animation: fadeIn 1s ease-out;
+  color: #8b4513;
 }
 
 .header {
@@ -186,20 +187,20 @@ th {
 }
 
 .carousel button {
-  background: rgba(255, 105, 180, 0.8);
-  color: white;
+  background: transparent;
+  color: #daa520;
   border: none;
   border-radius: 50%;
   width: 40px;
   height: 40px;
   font-size: 20px;
   cursor: pointer;
-  margin: 0 10px;
-  transition: background 0.3s ease;
+  margin: 10px 0;
+  transition: color 0.3s ease;
 }
 
 .carousel button:hover {
-  background: rgba(255, 105, 180, 1);
+  color: #b8860b;
 }
 
 .tab-item {
@@ -246,8 +247,8 @@ th {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 105, 180, 0.8);
-  color: white;
+  background: transparent;
+  color: #daa520;
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -255,11 +256,11 @@ th {
   font-size: 24px;
   cursor: pointer;
   z-index: 10;
-  transition: background 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .prev:hover, .next:hover {
-  background: rgba(255, 105, 180, 1);
+  color: #b8860b;
 }
 
 .prev {
