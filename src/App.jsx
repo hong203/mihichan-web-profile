@@ -212,11 +212,11 @@ const App = () => {
       <div className="carousel-section">
         <h3>Menu & Info</h3>
         <div className="carousel">
-          <button onClick={prevTab}>&lt;</button>
+          <button onClick={prevTab}>🍗</button>
           <div className="tab-item" onClick={() => openModal(tabs[currentTab].content)}>
             {tabs[currentTab].name}
           </div>
-          <button onClick={nextTab}>&gt;</button>
+          <button onClick={nextTab}>🍗</button>
         </div>
       </div>
 
@@ -234,16 +234,16 @@ const App = () => {
       <div className="gallery-section featured">
         <h3>Samples</h3>
         <div className="gallery" onTouchStart={handleGalleryTouchStart} onTouchMove={handleGalleryTouchMove} onTouchEnd={handleGalleryTouchEnd}>
-          <button onClick={prevImage}>&lt;</button>
+          <button onClick={prevImage}>🍗</button>
           <img src={images[currentImage]} alt={`Sample ${currentImage + 1}`} className="gallery-image" />
-          <button onClick={nextImage}>&gt;</button>
+          <button onClick={nextImage}>🍗</button>
         </div>
       </div>
 
       {showModal && (
         <div className="modal" onClick={closeModal} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-          {isGalleryModal && <button className="prev" onClick={(e) => { e.stopPropagation(); prevImage(); }}>&lt;</button>}
-          {isGalleryModal && <button className="next" onClick={(e) => { e.stopPropagation(); nextImage(); }}>&gt;</button>}
+          {isGalleryModal && <button className="prev" onClick={(e) => { e.stopPropagation(); prevImage(); }}>🍗</button>}
+          {isGalleryModal && <button className="next" onClick={(e) => { e.stopPropagation(); nextImage(); }}>🍗</button>}
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <span className="close" onClick={closeModal}>&times;</span>
             <div dangerouslySetInnerHTML={{ __html: modalContent }} />
