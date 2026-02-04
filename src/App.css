@@ -124,6 +124,11 @@ button:hover {
   transform: scale(1.1);
 }
 
+.gallery button:hover {
+  background: #f4a460;
+  transform: scale(1.1);
+}
+
 .menu-section {
   margin-bottom: 2rem;
   background: rgba(255,255,255,0.8);
@@ -207,11 +212,11 @@ th {
   font-size: 20px;
   cursor: pointer;
   margin: 10px 0;
-  transition: color 0.3s ease;
+  transition: transform 0.2s;
 }
 
 .carousel button:hover {
-  color: #b8860b;
+  transform: scale(1.1);
 }
 
 .tab-item {
