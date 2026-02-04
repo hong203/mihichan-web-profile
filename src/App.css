@@ -23,14 +23,14 @@
 
 .header h1 {
   font-size: 2.5em;
-  color: #ff69b4;
-  text-shadow: 2px 2px #ffb6c1, 0 0 10px rgba(255, 105, 180, 0.5);
+  color: #daa520;
+  text-shadow: 2px 2px #f4a460, 0 0 10px rgba(218, 165, 32, 0.5);
   animation: glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
-  from { text-shadow: 2px 2px #ffb6c1, 0 0 10px rgba(255, 105, 180, 0.5); }
-  to { text-shadow: 2px 2px #ffb6c1, 0 0 20px rgba(255, 105, 180, 0.8), 0 0 30px rgba(255, 105, 180, 0.3); }
+  from { text-shadow: 2px 2px #f4a460, 0 0 10px rgba(218, 165, 32, 0.5); }
+  to { text-shadow: 2px 2px #f4a460, 0 0 20px rgba(218, 165, 32, 0.8), 0 0 30px rgba(218, 165, 32, 0.3); }
 }
 
 .header p {
@@ -56,7 +56,7 @@
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #ffb6c1;
+  border: 5px solid #f4a460;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .gallery-section h3 {
-  color: #ff69b4;
+  color: #daa520;
   margin-bottom: 1rem;
 }
 
@@ -98,7 +98,7 @@
 }
 
 button {
-  background: #ffb6c1;
+  background: #f4a460;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 50%;
@@ -109,7 +109,7 @@ button {
 }
 
 button:hover {
-  background: #ff69b4;
+  background: #daa520;
   transform: scale(1.1);
 }
 
@@ -121,7 +121,7 @@ button:hover {
 }
 
 .menu-section h3 {
-  color: #ff69b4;
+  color: #daa520;
   text-align: center;
 }
 
@@ -164,7 +164,7 @@ th {
 }
 
 .fees h4 {
-  color: #ff69b4;
+  color: #daa520;
 }
 
 .carousel-section {
@@ -175,7 +175,7 @@ th {
 }
 
 .carousel-section h3 {
-  color: #ff69b4;
+  color: #daa520;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -205,7 +205,7 @@ th {
 
 .tab-item {
   padding: 1rem 2rem;
-  background: #ffb6c1;
+  background: #f4a460;
   color: white;
   border-radius: 10px;
   cursor: pointer;
@@ -215,9 +215,9 @@ th {
 }
 
 .tab-item:hover {
-  background: #ff69b4;
+  background: #daa520;
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+  box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
 }
 
 .modal {
