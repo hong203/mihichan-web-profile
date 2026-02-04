@@ -227,6 +227,31 @@ th {
   transform: scale(1.1);
 }
 
+.nav-icon {
+  background: transparent;
+  border: 2px solid #daa520;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #daa520;
+}
+
+.nav-icon:hover {
+  transform: scale(1.1);
+}
+
+.gallery .nav-icon {
+  border-color: #f4a460;
+  color: #f4a460;
+}
+
 .tab-item {
   padding: 1rem 2rem;
   background: #f4a460;

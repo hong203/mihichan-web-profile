@@ -212,11 +212,11 @@ const App = () => {
       <div className="carousel-section">
         <h3>Menu & Info</h3>
         <div className="carousel">
-          <button onClick={prevTab}>🍗</button>
+          <div className="nav-icon" onClick={prevTab}>🍗</div>
           <div className="tab-item" onClick={() => openModal(tabs[currentTab].content)}>
             {tabs[currentTab].name}
           </div>
-          <button onClick={nextTab}>🍗</button>
+          <div className="nav-icon" onClick={nextTab}>🍗</div>
         </div>
       </div>
 
@@ -234,9 +234,9 @@ const App = () => {
       <div className="gallery-section featured">
         <h3>Samples</h3>
         <div className="gallery" onTouchStart={handleGalleryTouchStart} onTouchMove={handleGalleryTouchMove} onTouchEnd={handleGalleryTouchEnd}>
-          <button onClick={prevImage}>🍗</button>
+          <div className="nav-icon" onClick={prevImage}>🍗</div>
           <img src={images[currentImage]} alt={`Sample ${currentImage + 1}`} className="gallery-image" />
-          <button onClick={nextImage}>🍗</button>
+          <div className="nav-icon" onClick={nextImage}>🍗</div>
         </div>
       </div>
 
