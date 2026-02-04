@@ -109,23 +109,23 @@
 }
 
 button {
-  background: #f4a460;
-  border: none;
+  background: transparent;
+  border: 2px solid #f4a460;
   padding: 0.5rem 1rem;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 1.5em;
-  color: white;
+  font-size: 1.2em;
+  color: #f4a460;
   transition: background 0.3s, transform 0.2s;
 }
 
 button:hover {
-  background: #daa520;
+  background: transparent;
   transform: scale(1.1);
 }
 
 .gallery button:hover {
-  background: #f4a460;
+  background: transparent;
   transform: scale(1.1);
 }
 
@@ -205,11 +205,11 @@ th {
 .carousel button {
   background: transparent;
   color: #daa520;
-  border: none;
+  border: 2px solid #daa520;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
   cursor: pointer;
   margin: 10px 0;
   transition: transform 0.2s;
