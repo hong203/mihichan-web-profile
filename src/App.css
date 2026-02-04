@@ -95,6 +95,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .gallery-image {
@@ -210,8 +211,8 @@ th {
 .carousel button {
   background: transparent;
   color: #daa520;
-  border: 2px solid #daa520;
-  border-radius: 50%;
+  border: none;
+  border-radius: 0;
   width: 30px;
   height: 30px;
   font-size: 16px;
@@ -250,6 +251,45 @@ th {
 .gallery .nav-icon {
   border-color: #f4a460;
   color: #f4a460;
+}
+
+.nav-icon.left {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-icon.right {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-icon.prev {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.nav-icon.next {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.swipe-hint {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  opacity: 0.6;
+  font-size: 12px;
+  color: #daa520;
+  pointer-events: none;
 }
 
 .tab-item {
@@ -453,6 +493,14 @@ th {
 
   .gallery button {
     display: none;
+  }
+
+  .gallery .nav-icon {
+    display: none;
+  }
+
+  .swipe-hint {
+    display: block;
   }
 
   .sample-grid {

@@ -11,8 +11,9 @@ const App = () => {
   const [touchEnd, setTouchEnd] = useState(0)
   const [galleryTouchStart, setGalleryTouchStart] = useState(0)
   const [galleryTouchEnd, setGalleryTouchEnd] = useState(0)
+  const [isFading, setIsFading] = useState(false)
 
-  const minSwipeDistance = 50
+  const minSwipeDistance = 30
 
   const handleTouchStart = (e) => {
     setTouchEnd(0)
@@ -86,11 +87,19 @@ const App = () => {
   ]
 
   const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % images.length)
+    setIsFading(true)
+    setTimeout(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length)
+      setIsFading(false)
+    }, 250)
   }
 
   const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
+    setIsFading(true)
+    setTimeout(() => {
+      setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
+      setIsFading(false)
+    }, 250)
   }
 
   const nextTab = () => {
@@ -160,7 +169,7 @@ const App = () => {
           <li>Trong giao dịch, page sẽ rep tin nhắn trong thời gian sớm và nhanh nhất trong khả năng.</li>
           <li>Khách lần đầu đặt vui lòng show bài check legit hoặc lịch sử giao dịch cho page check trước khi giao dịch.</li>
           <li>Người giao dịch với khách là staff không phải artist, xin hãy rõ ràng trong khi giao dịch để tránh khó xử.</li>
-          <li>Không hài lòng về tranh có vấn đề không ưng ý hãy feedback sớm cho bên staff để liên lạc với artist để sửa hoàn thiện cho các bạn. Không chịu trách nhiệm thêm về commission của bạn sau khi đã hoàn tất giao dịch</li>
+          <li>Nếu không hài lòng về tranh hoặc có vấn đề không ưng ý, hãy feedback sớm cho bên staff để chúng tôi liên lạc với artist sửa chữa hoàn thiện. Chúng tôi không chịu trách nhiệm thêm về commission sau khi giao dịch đã hoàn tất.</li>
           <li>Không nhận chuyển khoản trước kể cả cọc, thanh toán 100% sau khi hoàn thiện com. Thanh toán trong vòng 2 ngày sau khi hoàn thiện, nếu có việc gấp, lí do chính đáng sẽ được gia hạn tối đa 5 ngày để hoàn thành chuyển khoản. Sau 1 tuần không chuyển khoản full sẽ được đưa vào blacklist cấm giao dịch.</li>
           <li>Gift sẽ được tặng ngẫu nhiên, hỗ trợ des tính 30% giá com des hoàn chỉnh.</li>
           <li>Deadline theo khách đặt, có nhận deadline gấp nhưng hạn chế số lượng, để artist có thể hoàn thiện com được tốt nhất có thể.</li>
@@ -234,16 +243,17 @@ const App = () => {
       <div className="gallery-section featured">
         <h3>Samples</h3>
         <div className="gallery" onTouchStart={handleGalleryTouchStart} onTouchMove={handleGalleryTouchMove} onTouchEnd={handleGalleryTouchEnd}>
-          <div className="nav-icon" onClick={prevImage}>🍗</div>
-          <img src={images[currentImage]} alt={`Sample ${currentImage + 1}`} className="gallery-image" />
-          <div className="nav-icon" onClick={nextImage}>🍗</div>
+          <div className="nav-icon left" onClick={prevImage}>🍗</div>
+          <img src={images[currentImage]} alt={`Sample ${currentImage + 1}`} className="gallery-image" style={{ opacity: isFading ? 0 : 1 }} />
+          <div className="nav-icon right" onClick={nextImage}>🍗</div>
+          <div className="swipe-hint">➡️ Vuốt để xem thêm</div>
         </div>
       </div>
 
       {showModal && (
         <div className="modal" onClick={closeModal} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-          {isGalleryModal && <button className="prev" onClick={(e) => { e.stopPropagation(); prevImage(); }}>🍗</button>}
-          {isGalleryModal && <button className="next" onClick={(e) => { e.stopPropagation(); nextImage(); }}>🍗</button>}
+          {isGalleryModal && <div className="nav-icon prev" onClick={(e) => { e.stopPropagation(); prevImage(); }}>🍗</div>}
+          {isGalleryModal && <div className="nav-icon next" onClick={(e) => { e.stopPropagation(); nextImage(); }}>🍗</div>}
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <span className="close" onClick={closeModal}>&times;</span>
             <div dangerouslySetInnerHTML={{ __html: modalContent }} />
