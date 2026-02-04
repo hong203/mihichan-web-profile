@@ -36,7 +36,8 @@
 
 .header p {
   font-size: 1.2em;
-  color: #4682b4;
+  color: #8B4513;
+  -webkit-text-stroke: 2px black;
 }
 
 .profile-section {
