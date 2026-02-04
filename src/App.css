@@ -223,6 +223,8 @@ th {
   font-size: 1.2em;
   transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
   margin: 0 1rem;
+  min-width: 180px;
+  text-align: center;
 }
 
 .tab-item:hover {

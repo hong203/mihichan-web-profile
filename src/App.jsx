@@ -81,8 +81,8 @@ const App = () => {
 
   const tabs = [
     { name: 'Thực đơn', content: 'menu' },
+    { name: 'Sample', content: 'samples' },
     { name: 'Điều khoản dịch vụ', content: 'terms' },
-    { name: 'Sample', content: 'samples' }
   ]
 
   const nextImage = () => {
