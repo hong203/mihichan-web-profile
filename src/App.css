@@ -111,12 +111,12 @@
 .buttons button {
   background: transparent;
   color: #99B5C8;
-  border: 2px solid #99B5C8;
+  border: none;
   padding: 12px 20px;
   border-radius: 10px;
   cursor: pointer;
   font-size: 1em;
-  transition: background 0.3s, color 0.3s;
+  transition: font-size 0.3s ease;
   text-align: center;
   min-width: 120px;
   max-width: 180px;
@@ -129,14 +129,32 @@
 }
 
 .buttons button:hover {
-  background: #99B5C8;
-  color: white;
+  font-size: 1.15em;
 }
 
 .content-section {
   flex: 1;
   overflow-y: auto;
   color: #333;
+  position: relative;
+}
+
+.home-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #99B5C8;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: transform 0.3s ease;
+  z-index: 10;
+}
+
+.home-btn:hover {
+  transform: scale(1.2);
 }
 
 .content-section h2, .content-section h3 {
@@ -384,7 +402,7 @@ th {
     max-width: 100%;
   }
   .intro .intro-text p {
-    font-size: 0.95em;
+    font-size: 1em;
   }
   .buttons {
     flex-direction: row;
@@ -396,16 +414,25 @@ th {
     min-width: 90px;
     max-width: 150px;
     padding: 10px 8px;
-    font-size: 0.85em;
+    font-size: 0.95em;
     min-height: auto;
   }
   .content-section {
-    font-size: 1em;
-    line-height: 1.4;
+    font-size: 1.05em;
+    line-height: 1.5;
     padding: 15px;
   }
+  .content-section h2 {
+    font-size: 1.3em;
+  }
+  .content-section h3 {
+    font-size: 1.15em;
+  }
+  .content-section p {
+    font-size: 1.05em;
+  }
   table {
-    font-size: 0.9em;
+    font-size: 0.95em;
   }
   table th, table td {
     padding: 8px 5px;
@@ -416,6 +443,11 @@ th {
   }
   .sample-thumb {
     height: 150px;
+  }
+  .home-btn {
+    font-size: 1.3em;
+    top: 10px;
+    right: 10px;
   }
 }
 

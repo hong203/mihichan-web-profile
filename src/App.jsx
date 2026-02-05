@@ -61,12 +61,13 @@ const App = () => {
             <div className="intro-text">
               <p>Chào mừng quý khách đến với tiệm gà rán của mihi chan, rất hân hạnh được phục vụ các bạn ʕ ᵔᴥᵔ ʔ !</p>
               <p>Hãy để tiệm gà của mihi chan phác họa nên những gam màu rực rỡ cho nhân vật của riêng bạn.</p>
-              <p>Liên hệ với page của <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">mihichan</a></p>
+              <p>Liên hệ với page qua <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">mihichan</a></p>
             </div>
           </div>
         )}
         {currentPage === 'menu' && (
           <div className="content-section">
+            <button className="home-btn" onClick={() => setCurrentPage('intro')}>✕</button>
             <h2>Thực đơn</h2>
             <p>Đây là giá GỐC, chưa tính thêm details, tiền dt sẽ được tính theo độ phức tạp của brief ( trừ những loại splash art, drip marketing hsr gi, tcg đã tính đầy đủ giá không thu thêm phụ phí. )</p>
             <h3>Honkai Star Rail commission</h3>
@@ -117,6 +118,7 @@ const App = () => {
         )}
         {currentPage === 'sample' && (
           <div className="content-section">
+            <button className="home-btn" onClick={() => setCurrentPage('intro')}>✕</button>
             {Object.entries(sampleCategories).map(([category, imgs]) => (
               <div key={category}>
                 <h3>{category}</h3>
@@ -131,6 +133,7 @@ const App = () => {
         )}
         {currentPage === 'terms' && (
           <div className="content-section">
+            <button className="home-btn" onClick={() => setCurrentPage('intro')}>✕</button>
             <h2>Điều khoản dịch vụ</h2>
             <h3>Về giao dịch</h3>
             <p>Trong giao dịch, page sẽ rep tin nhắn trong thời gian sớm và nhanh nhất trong khả năng.</p>
