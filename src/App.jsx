@@ -2,28 +2,8 @@ import { useState } from 'react'
 import './App.css'
 
 const App = () => {
-  const [currentTab, setCurrentTab] = useState(0)
-  const [touchStart, setTouchStart] = useState(0)
-  const [touchEnd, setTouchEnd] = useState(0)
-
-  const tabNames = ['Thực đơn', 'Sample', 'Điều khoản dịch vụ']
-  const minSwipeDistance = 30
-
-  const handleTouchStart = (e) => {
-    setTouchEnd(0)
-    setTouchStart(e.targetTouches[0].clientX)
-  }
-
-  const handleTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > minSwipeDistance
-    const isRightSwipe = distance < -minSwipeDistance
-    if (isLeftSwipe) nextTab()
-    if (isRightSwipe) prevTab()
-  }
+  const [currentPage, setCurrentPage] = useState('intro')
+  const [zoomedImage, setZoomedImage] = useState(null)
 
   const sampleCategories = {
     'Commission design': [
@@ -70,41 +50,22 @@ const App = () => {
 
   return (
     <div className="app">
-      <header className="header">
-        <h1>ִִ ࣪✶⋆.˚tiệm gà rán mihi chan ˖°𓇼 🌊 🐚 🫧</h1>
-        <p>Commission: Closed.</p>
-      </header>
-      <div className="profile-section">
-        <div className="avatar">
-          <img src="/images/imageavata.png" alt="Mihi Chan Avatar" />
-        </div>
-        <div className="info">
-          <p>Chào mừng quý khách đến với tiệm gà rán của mihi chan, rất hân hạnh được phục vụ các bạn ʕ ᵔᴥᵔ ʔ !</p>
-          <p>Hãy để tiệm gà của mihi chan phác họa nên những gam màu rực rỡ cho nhân vật của riêng bạn.</p>
-          <p>Theo dõi page Facebook của chúng tôi: <a href="https://www.facebook.com/profile.php?id=61585840063897&locale=vi_VN" target="_blank" rel="noopener noreferrer">Mihi Chan</a></p>
-        </div>
-      </div>
-      <div className="carousel-section">
-        <h3>Menu & Info</h3>
-        <div className="carousel" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-          <div className="nav-icon" onClick={prevTab}>🍗</div>
-          <div className="tab-item" onClick={() => setCurrentTab(0)}>
-            Thực đơn
+      <div className="frame">
+        {currentPage === 'intro' && (
+          <div className="intro">
+            <h1>ִִ ࣪✶⋆.˚tiệm gà rán mihi chan ˖°𓇼 🌊 🐚 🫧</h1>
+            <p>Commission: Closed.</p>
+            <div className="avatar">
+              <img src="/images/imageavata.png" alt="Mihi Chan Avatar" />
+            </div>
+            <div className="intro-text">
+              <p>Chào mừng quý khách đến với tiệm gà rán của mihi chan, rất hân hạnh được phục vụ các bạn ʕ ᵔᴥᵔ ʔ !</p>
+              <p>Hãy để tiệm gà của mihi chan phác họa nên những gam màu rực rỡ cho nhân vật của riêng bạn.</p>
+            </div>
           </div>
-          <div className="tab-item" onClick={() => setCurrentTab(1)}>
-            Sample
-          </div>
-          <div className="tab-item" onClick={() => setCurrentTab(2)}>
-            Điều khoản dịch vụ
-          </div>
-          <div className="current-tab">{tabNames[currentTab]}</div>
-          <div className="nav-icon" onClick={nextTab}>🍗</div>
-        </div>
-      </div>
-      
-      <div className="content-section">
-        {currentTab === 0 && (
-          <div>
+        )}
+        {currentPage === 'menu' && (
+          <div className="content-section">
             <h2>Thực đơn</h2>
             <p>Đây là giá GỐC, chưa tính thêm details, tiền dt sẽ được tính theo độ phức tạp của brief ( trừ những loại splash art, drip marketing hsr gi, tcg đã tính đầy đủ giá không thu thêm phụ phí. )</p>
             <h3>Honkai Star Rail commission</h3>
@@ -153,22 +114,22 @@ const App = () => {
             <p>Phí thương mại x 5</p>
           </div>
         )}
-        {currentTab === 1 && (
-          <div>
+        {currentPage === 'sample' && (
+          <div className="content-section">
             {Object.entries(sampleCategories).map(([category, imgs]) => (
               <div key={category}>
                 <h3>{category}</h3>
                 <div className="sample-grid">
                   {imgs.map(img => (
-                    <img key={img} src={img} alt="Sample" className="sample-thumb" />
+                    <img key={img} src={img} alt="Sample" className="sample-thumb" onClick={() => setZoomedImage(img)} />
                   ))}
                 </div>
               </div>
             ))}
           </div>
         )}
-        {currentTab === 2 && (
-          <div>
+        {currentPage === 'terms' && (
+          <div className="content-section">
             <h2>Điều khoản dịch vụ</h2>
             <h3>Về giao dịch</h3>
             <p>Trong giao dịch, page sẽ rep tin nhắn trong thời gian sớm và nhanh nhất trong khả năng.</p>
@@ -198,8 +159,17 @@ const App = () => {
             <p>Vì là liên lạc trung gian qua staff nên vui lòng không tra hỏi thông tin đời tư của hoạ sĩ.</p>
           </div>
         )}
+        <div className="buttons">
+          <button onClick={() => setCurrentPage('menu')}>Thực đơn</button>
+          <button onClick={() => setCurrentPage('sample')}>Sample</button>
+          <button onClick={() => setCurrentPage('terms')}>Điều khoản dịch vụ</button>
+        </div>
       </div>
-      
+      {zoomedImage && (
+        <div className="modal" onClick={() => setZoomedImage(null)}>
+          <img src={zoomedImage} alt="Zoomed" className="zoomed-image" />
+        </div>
+      )}
     </div>
   )
 }
