@@ -13,15 +13,6 @@ const App = () => {
       setIsTransitioning(false)
     }, 150)
   }
-  const [isTransitioning, setIsTransitioning] = useState(false)
-
-  const handlePageChange = (page) => {
-    setIsTransitioning(true)
-    setTimeout(() => {
-      setCurrentPage(page)
-      setIsTransitioning(false)
-    }, 150)
-  }
 
   const sampleCategories = {
     'Commission design': [
