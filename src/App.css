@@ -86,6 +86,7 @@ html, body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  cursor: url('/images/IMG_9033.PNG'), auto;
 }
 
 .frame {
