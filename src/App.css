@@ -68,6 +68,7 @@ html, body {
   overflow: hidden;
   height: 100%;
   cursor: url('/images/IMG_9033.PNG') 0 0, auto;
+  cursor: url('/images/IMG_9033.PNG') 0 0, auto !important;
 }
 
 @keyframes fadeIn {
@@ -94,7 +95,7 @@ html, body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  cursor: url('/images/IMG_9033.PNG') 0 0, auto;
+  cursor: url('/images/IMG_9033.PNG'), auto;
 }
 
 .frame {
@@ -144,7 +145,7 @@ html, body {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  cursor: url('/images/IMG_9033.PNG') 0 0, pointer;
+  cursor: pointer !important;
 }
 
 .intro .avatar img {
