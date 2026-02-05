@@ -5,7 +5,6 @@ const App = () => {
   const [currentImage, setCurrentImage] = useState(0)
   const [currentTab, setCurrentTab] = useState(0)
   const [showModal, setShowModal] = useState(false)
-  const [modalContent, setModalContent] = useState('')
   const [isGalleryModal, setIsGalleryModal] = useState(false)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
@@ -51,8 +50,11 @@ const App = () => {
   }
 
   window.openLarge = (img) => {
+    const index = images.indexOf(img)
+    if (index !== -1) {
+      setCurrentImage(index)
+    }
     setIsGalleryModal(true)
-    setModalContent(`<img src="${img}" alt="Large Sample" style="max-width: 100vw; max-height: 100vh; display: block; margin: 0 auto;" />`)
     setShowModal(true)
   }
 
@@ -265,7 +267,9 @@ const App = () => {
           {isGalleryModal && <div className="nav-icon next" onClick={(e) => { e.stopPropagation(); nextImage(); }}>🍗</div>}
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <span className="close" onClick={closeModal}>&times;</span>
-            <div dangerouslySetInnerHTML={{ __html: modalContent }} />
+            {isGalleryModal && (
+              <img src={images[currentImage]} alt="Large Sample" style={{maxWidth: '100vw', maxHeight: '100vh', display: 'block', margin: '0 auto'}} />
+            )}
           </div>
         </div>
       )}
