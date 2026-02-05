@@ -73,6 +73,15 @@
   color: #333;
 }
 
+.info a {
+  color: #99B5C8;
+  text-decoration: none;
+}
+
+.info a:hover {
+  text-decoration: underline;
+}
+
 .info p {
   font-size: 1.1em;
   line-height: 1.5;
@@ -160,7 +169,7 @@ button:hover {
 }
 
 .menu-section h3 {
-  color: #99B5C8;
+  color: #333;
   text-align: center;
 }
 
