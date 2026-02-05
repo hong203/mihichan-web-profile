@@ -61,6 +61,7 @@ const App = () => {
             <div className="intro-text">
               <p>Chào mừng quý khách đến với tiệm gà rán của mihi chan, rất hân hạnh được phục vụ các bạn ʕ ᵔᴥᵔ ʔ !</p>
               <p>Hãy để tiệm gà của mihi chan phác họa nên những gam màu rực rỡ cho nhân vật của riêng bạn.</p>
+              <p><a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">📱 Liên hệ Facebook</a></p>
             </div>
           </div>
         )}
