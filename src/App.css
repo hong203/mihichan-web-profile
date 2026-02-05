@@ -22,7 +22,7 @@
 }
 
 .frame {
-  background: #EEE7DC;
+  background: rgba(238, 231, 220, 0.85);
   width: 80%;
   max-width: 800px;
   padding: 20px;
