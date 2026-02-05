@@ -63,7 +63,7 @@ const App = () => {
       <div className="frame">
         {currentPage === 'intro' && (
           <div className="intro-container">
-            <div className={`intro ${showSOS ? 'blurred' : ''}`}>
+            <div className="intro">
               <h1>ִִ ࣪✶⋆.˚Tiệm gà rán mihi chan˖°𓇼</h1>
               <p>Commission: Closed.</p>
               <div className="avatar">
@@ -81,13 +81,12 @@ const App = () => {
               </div>
             </div>
             {showSOS && (
-              <div className="sos-overlay-intro" onClick={() => setShowSOS(false)}>
-                <div className="sos-modal-intro" onClick={(e) => e.stopPropagation()}>
+              <div className="sos-overlay-intro">
+                <div className="sos-modal-intro" onClick={() => setShowSOS(false)}>
                   <p className="sos-text">
                     Mihi chan đang bị staff giam gửi tín hiệu SOS tới bạn<br/>
                     Xin hãy giải cứu mihi chan khỏi bàn tay ác quỷ tại:<br/>
                     ———<br/>
-                    <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">mihichan</a>
                   </p>
                 </div>
               </div>
