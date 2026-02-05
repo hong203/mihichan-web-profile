@@ -60,6 +60,7 @@ html, body {
   padding: 0;
   overflow: hidden;
   height: 100%;
+  cursor: url('/images/IMG_9033.PNG') 12 12, auto;
 }
 
 @keyframes fadeIn {
@@ -216,7 +217,7 @@ html, body {
   background: transparent;
   border: none;
   outline: none;
-  cursor: pointer;
+  cursor: url('/images/IMG_9033.PNG') 12 12, pointer;
   transition: transform 0.3s ease;
   -webkit-appearance: none;
   appearance: none;
@@ -311,7 +312,7 @@ html, body {
   outline: none;
   color: #6082B6;
   font-size: 1em;
-  cursor: pointer;
+  cursor: url('/images/IMG_9033.PNG') 12 12, pointer;
   padding: 6px 8px;
   transition: transform 0.3s ease;
   z-index: 10;
@@ -457,7 +458,7 @@ button {
   border: 2px solid #f4a460;
   padding: 0;
   border-radius: 50%;
-  cursor: pointer;
+  cursor: url('/images/IMG_9033.PNG') 12 12, pointer;
   font-size: 1.2em;
   color: #f4a460;
   transition: background 0.3s, transform 0.2s;
