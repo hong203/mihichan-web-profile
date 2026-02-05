@@ -4,6 +4,9 @@ import './App.css'
 const App = () => {
   const [currentImage, setCurrentImage] = useState(0)
   const [currentTab, setCurrentTab] = useState(0)
+  const [showModal, setShowModal] = useState(false)
+  const [modalContent, setModalContent] = useState('')
+  const [isGalleryModal, setIsGalleryModal] = useState(false)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
   const [galleryTouchStart, setGalleryTouchStart] = useState(0)
@@ -104,6 +107,10 @@ const App = () => {
 
   const prevTab = () => {
     setCurrentTab((prev) => (prev - 1 + 3) % 3)
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
   }
 
   return (
@@ -251,6 +258,17 @@ const App = () => {
         </div>
         <div className="swipe-hint">🍗 Vuốt để xem thêm</div>
       </div>
+
+      {showModal && (
+        <div className="modal" onClick={closeModal} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+          {isGalleryModal && <div className="nav-icon prev" onClick={(e) => { e.stopPropagation(); prevImage(); }}>🍗</div>}
+          {isGalleryModal && <div className="nav-icon next" onClick={(e) => { e.stopPropagation(); nextImage(); }}>🍗</div>}
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <span className="close" onClick={closeModal}>&times;</span>
+            <div dangerouslySetInnerHTML={{ __html: modalContent }} />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
