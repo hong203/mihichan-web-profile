@@ -16,11 +16,7 @@ const App = () => {
   const minSwipeDistance = 30
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextImage()
-    }, 5000) // 5 seconds
-
-    return () => clearInterval(interval)
+    // Removed auto slideshow
   }, [])
 
   const handleTouchStart = (e) => {
@@ -286,9 +282,9 @@ const App = () => {
       
       <div className="gallery-section featured">
         <div className="gallery" onTouchStart={handleGalleryTouchStart} onTouchMove={handleGalleryTouchMove} onTouchEnd={handleGalleryTouchEnd}>
-          <div className="nav-icon left" onClick={prevImage}>🍗</div>
+          <div className="nav-icon" onClick={prevImage}>🍗</div>
           <img src={images[currentImage]} alt={`Sample ${currentImage + 1}`} className={`gallery-image slide ${!isFading ? 'is-active' : ''}`} />
-          <div className="nav-icon right" onClick={nextImage}>🍗</div>
+          <div className="nav-icon" onClick={nextImage}>🍗</div>
           <div className="swipe-hint">➡️ Vuốt để xem thêm</div>
         </div>
       </div>

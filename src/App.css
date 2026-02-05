@@ -94,12 +94,12 @@
 .gallery {
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  justify-content: space-between;
   width: 100vw;
   max-width: 700px;
   height: 50vh;
   margin: 0 auto;
+  position: relative;
 }
 
 .gallery-image {
@@ -107,6 +107,8 @@
   height: 100%;
   object-fit: contain;
   border-radius: 10px;
+  flex: 1;
+  margin: 0 10px;
 }
 
 .slide {
@@ -252,6 +254,7 @@ th {
   align-items: center;
   justify-content: center;
   color: #daa520;
+  flex-shrink: 0;
 }
 
 .nav-icon:hover {
@@ -261,20 +264,6 @@ th {
 .gallery .nav-icon {
   border-color: #f4a460;
   color: #f4a460;
-}
-
-.nav-icon.left {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.nav-icon.right {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .nav-icon.prev {
