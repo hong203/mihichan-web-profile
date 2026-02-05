@@ -267,6 +267,19 @@ html, body {
   margin-bottom: 15px;
 }
 
+.content-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content-section::-webkit-scrollbar-thumb {
+  background: #6082B6;
+  border-radius: 10px;
+}
+
 .content-section.fade-in {
   animation: fadeIn 0.3s ease-in forwards;
 }
