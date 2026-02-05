@@ -30,9 +30,9 @@
 
 .intro {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 0.8fr;
   grid-template-rows: auto auto auto;
-  gap: 20px;
+  gap: 10px;
   height: auto;
 }
 
@@ -75,14 +75,15 @@
 .intro .intro-text {
   grid-column: 1;
   grid-row: 3;
-  color: #333;
+  color: #99B5C8;
   max-width: 100%;
 }
 
 .intro .intro-text p {
   margin: 10px 0;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #99B5C8;
 }
 
 .intro .intro-text a {
