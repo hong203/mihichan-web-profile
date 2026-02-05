@@ -314,6 +314,18 @@ th {
   box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
 }
 
+.current-tab {
+  padding: 0.5rem 1rem;
+  background: #f4a460;
+  color: white;
+  border-radius: 10px;
+  font-size: 1em;
+  margin: 0 1rem;
+  min-width: 120px;
+  text-align: center;
+  flex: 1;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -561,7 +573,25 @@ th {
 }
 
 @media (max-width: 768px) {
-  .nav-icon {
+  .tab-item {
     display: none;
+  }
+  .current-tab {
+    display: block;
+  }
+  .nav-icon {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .current-tab {
+    display: none;
+  }
+  .tab-item {
+    display: block;
+  }
+  .nav-icon {
+    display: block;
   }
 }

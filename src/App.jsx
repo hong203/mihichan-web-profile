@@ -6,6 +6,7 @@ const App = () => {
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
 
+  const tabNames = ['Thực đơn', 'Sample', 'Điều khoản dịch vụ']
   const minSwipeDistance = 30
 
   const handleTouchStart = (e) => {
@@ -96,6 +97,7 @@ const App = () => {
           <div className="tab-item" onClick={() => setCurrentTab(2)}>
             Điều khoản dịch vụ
           </div>
+          <div className="current-tab">{tabNames[currentTab]}</div>
           <div className="nav-icon" onClick={nextTab}>🍗</div>
         </div>
       </div>
