@@ -119,10 +119,9 @@
   transition: font-size 0.3s ease;
   text-align: center;
   min-width: 120px;
-  max-width: 180px;
+  max-width: 220px;
   min-height: 50px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  white-space: nowrap;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -416,6 +415,7 @@ th {
     padding: 10px 8px;
     font-size: 0.95em;
     min-height: auto;
+    white-space: nowrap;
   }
   .content-section {
     font-size: 1.05em;
