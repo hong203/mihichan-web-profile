@@ -9,7 +9,7 @@
   padding: 0;
   text-align: center;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: linear-gradient(135deg, #F2ECE4, #99B5C8);
+  background: linear-gradient(to bottom, #F2ECE4, #99B5C8);
   border-radius: 0;
   box-shadow: none;
   min-height: 100vh;
