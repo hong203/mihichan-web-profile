@@ -1,51 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 
 const App = () => {
-  const [currentImage, setCurrentImage] = useState(0)
   const [currentTab, setCurrentTab] = useState(0)
-  const [touchStart, setTouchStart] = useState(0)
-  const [touchEnd, setTouchEnd] = useState(0)
-  const [galleryTouchStart, setGalleryTouchStart] = useState(0)
-  const [galleryTouchEnd, setGalleryTouchEnd] = useState(0)
-
-  const minSwipeDistance = 30
-
-  useEffect(() => {
-    // Removed auto slideshow
-  }, [])
-
-  const handleTouchStart = (e) => {
-    setTouchEnd(0)
-    setTouchStart(e.targetTouches[0].clientX)
-  }
-
-  const handleTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > minSwipeDistance
-    const isRightSwipe = distance < -minSwipeDistance
-    if (isLeftSwipe) nextImage()
-    if (isRightSwipe) prevImage()
-  }
-
-  const handleGalleryTouchStart = (e) => {
-    setGalleryTouchEnd(0)
-    setGalleryTouchStart(e.targetTouches[0].clientX)
-  }
-
-  const handleGalleryTouchMove = (e) => setGalleryTouchEnd(e.targetTouches[0].clientX)
-
-  const handleGalleryTouchEnd = () => {
-    if (!galleryTouchStart || !galleryTouchEnd) return
-    const distance = galleryTouchStart - galleryTouchEnd
-    const isLeftSwipe = distance > minSwipeDistance
-    const isRightSwipe = distance < -minSwipeDistance
-    if (isLeftSwipe) nextImage()
-    if (isRightSwipe) prevImage()
-  }
 
   const sampleCategories = {
     'Commission design': [
@@ -80,16 +37,6 @@ const App = () => {
       '/images/received_1236150855045834.webp',
       '/images/received_3203525419806902.webp'
     ]
-  }
-
-  const images = Object.values(sampleCategories).flat()
-
-  const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % images.length)
-  }
-
-  const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
   }
 
   const nextTab = () => {
@@ -237,14 +184,6 @@ const App = () => {
         )}
       </div>
       
-      <div className="gallery-section featured">
-        <div className="gallery" onTouchStart={handleGalleryTouchStart} onTouchMove={handleGalleryTouchMove} onTouchEnd={handleGalleryTouchEnd}>
-          <div className="nav-icon" onClick={prevImage}>🍗</div>
-          <img src={images[currentImage]} alt={`Sample ${currentImage + 1}`} className="gallery-image" />
-          <div className="nav-icon" onClick={nextImage}>🍗</div>
-        </div>
-        <div className="swipe-hint">🍗 Vuốt để xem thêm</div>
-      </div>
     </div>
   )
 }
