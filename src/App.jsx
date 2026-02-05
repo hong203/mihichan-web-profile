@@ -285,8 +285,8 @@ const App = () => {
           <div className="nav-icon" onClick={prevImage}>🍗</div>
           <img src={images[currentImage]} alt={`Sample ${currentImage + 1}`} className={`gallery-image slide ${!isFading ? 'is-active' : ''}`} />
           <div className="nav-icon" onClick={nextImage}>🍗</div>
-          <div className="swipe-hint">➡️ Vuốt để xem thêm</div>
         </div>
+        <div className="swipe-hint">🍗 Vuốt để xem thêm</div>
       </div>
 
       {showModal && (
