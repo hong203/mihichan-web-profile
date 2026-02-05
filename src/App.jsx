@@ -3,6 +3,26 @@ import './App.css'
 
 const App = () => {
   const [currentTab, setCurrentTab] = useState(0)
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
+
+  const minSwipeDistance = 30
+
+  const handleTouchStart = (e) => {
+    setTouchEnd(0)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+    if (isLeftSwipe) nextTab()
+    if (isRightSwipe) prevTab()
+  }
 
   const sampleCategories = {
     'Commission design': [
@@ -65,7 +85,7 @@ const App = () => {
       </div>
       <div className="carousel-section">
         <h3>Menu & Info</h3>
-        <div className="carousel">
+        <div className="carousel" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div className="nav-icon" onClick={prevTab}>🍗</div>
           <div className="tab-item" onClick={() => setCurrentTab(0)}>
             Thực đơn
