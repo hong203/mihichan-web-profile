@@ -67,8 +67,7 @@ html, body {
   padding: 0;
   overflow: hidden;
   height: 100%;
-  cursor: url('/images/IMG_9033.PNG') 0 0, auto;
-  cursor: url('/images/IMG_9033.PNG') 0 0, auto !important;
+  cursor: url('/images/cursor.svg'), auto;
 }
 
 @keyframes fadeIn {
@@ -95,7 +94,7 @@ html, body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  cursor: url('/images/IMG_9033.PNG'), auto;
+  cursor: url('/images/cursor.svg'), auto;
 }
 
 .frame {
@@ -145,7 +144,7 @@ html, body {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  cursor: pointer !important;
+  cursor: url('/images/cursor.svg'), pointer;
 }
 
 .intro .avatar img {
@@ -226,7 +225,7 @@ html, body {
   background: transparent;
   border: none;
   outline: none;
-  cursor: url('/images/IMG_9033.PNG') 0 0, pointer;
+  cursor: url('/images/cursor.svg'), pointer;
   transition: transform 0.3s ease;
   -webkit-appearance: none;
   appearance: none;
@@ -321,7 +320,7 @@ html, body {
   outline: none;
   color: #6082B6;
   font-size: 1em;
-  cursor: url('/images/IMG_9033.PNG') 0 0, pointer;
+  cursor: url('/images/cursor.svg'), pointer;
   padding: 6px 8px;
   transition: transform 0.3s ease;
   z-index: 10;
@@ -467,7 +466,7 @@ button {
   border: 2px solid #f4a460;
   padding: 0;
   border-radius: 50%;
-  cursor: url('/images/IMG_9033.PNG') 0 0, pointer;
+  cursor: url('/images/cursor.svg'), pointer;
   font-size: 1.2em;
   color: #f4a460;
   transition: background 0.3s, transform 0.2s;
