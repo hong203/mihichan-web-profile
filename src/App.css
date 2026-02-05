@@ -182,12 +182,19 @@ html, body {
   padding: 10px;
   background: transparent;
   border: none;
+  outline: none;
   cursor: pointer;
   transition: transform 0.3s ease;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .image-button:hover {
   transform: scale(1.1);
+}
+
+.image-button:focus {
+  outline: none;
 }
 
 .image-button img {
@@ -211,6 +218,9 @@ html, body {
   white-space: nowrap;
   margin-top: 8px;
   display: block;
+  min-height: 1.2em;
+  line-height: 1.2;
+  height: 1.2em;
 }
 
 .intro-decoration {
@@ -265,16 +275,23 @@ html, body {
   right: 15px;
   background: transparent;
   border: none;
+  outline: none;
   color: #6082B6;
   font-size: 1.5em;
   cursor: pointer;
   padding: 5px 10px;
   transition: transform 0.3s ease;
   z-index: 10;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .home-btn:hover {
   transform: scale(1.2);
+}
+
+.home-btn:focus {
+  outline: none;
 }
 
 .content-section h2, .content-section h3 {
