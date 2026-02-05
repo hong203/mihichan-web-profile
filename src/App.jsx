@@ -287,7 +287,7 @@ const App = () => {
       <div className="gallery-section featured">
         <div className="gallery" onTouchStart={handleGalleryTouchStart} onTouchMove={handleGalleryTouchMove} onTouchEnd={handleGalleryTouchEnd}>
           <div className="nav-icon left" onClick={prevImage}>🍗</div>
-          <img src={images[currentImage]} alt={`Sample ${currentImage + 1}`} className="gallery-image" style={{ opacity: isFading ? 0 : 1, transform: isFading ? 'translateX(-100%)' : 'translateX(0)' }} />
+          <img src={images[currentImage]} alt={`Sample ${currentImage + 1}`} className="gallery-image" style={{ transform: isFading ? 'translateX(-100%)' : 'translateX(0)' }} />
           <div className="nav-icon right" onClick={nextImage}>🍗</div>
           <div className="swipe-hint">➡️ Vuốt để xem thêm</div>
         </div>
