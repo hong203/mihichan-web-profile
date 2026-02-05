@@ -86,7 +86,7 @@ const App = () => {
                   <p className="sos-text">
                     Mihi chan đang bị staff giam gửi tín hiệu SOS tới bạn<br/>
                     Xin hãy giải cứu mihi chan khỏi bàn tay ác quỷ tại:<br/>
-                    ———<br/>
+                    ———————————————<br/>
                   </p>
                 </div>
               </div>
