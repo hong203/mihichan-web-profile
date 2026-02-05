@@ -105,8 +105,19 @@
   max-height: 500px;
   object-fit: contain;
   margin: 0;
-  transition: opacity 0.5s ease-in-out;
   border-radius: 10px;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 600ms ease;
+  will-change: opacity;
+}
+
+.slide.is-active {
+  opacity: 1;
 }
 
 button {
