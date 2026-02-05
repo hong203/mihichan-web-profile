@@ -62,7 +62,7 @@ const App = () => {
       <div className="frame">
         {currentPage === 'intro' && (
           <div className="intro">
-            <h1>ִִ ࣪✶⋆.˚Tiệm gà rán mihi chan ˖°𓇼</h1>
+            <h1>ִִ ࣪✶⋆.˚Tiệm gà rán mihi chan˖°𓇼</h1>
             <p>Commission: Closed.</p>
             <div className="avatar">
               <img src="/images/imageavata.png" alt="Mihi Chan Avatar" />
