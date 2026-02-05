@@ -190,10 +190,9 @@ html, body {
 }
 
 .image-button img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
-  border: 3px solid white;
   border-radius: 8px;
   transition: filter 0.3s ease;
 }
@@ -204,25 +203,24 @@ html, body {
 
 .image-button span {
   color: #6082B6;
-  font-size: 0.95em;
+  font-size: 1em;
   font-weight: bold;
   text-align: center;
-  max-width: 110px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  max-width: 120px;
+  white-space: normal;
+  margin-top: 8px;
+  display: block;
 }
 
 .intro-decoration {
   position: absolute;
-  bottom: 20px;
-  right: 50%;
-  transform: translateX(50%);
+  bottom: 15px;
+  right: 15px;
   z-index: 5;
 }
 
 .intro-decoration img {
-  width: 150px;
+  width: 200px;
   height: auto;
   opacity: 0.85;
 }
@@ -533,15 +531,15 @@ th {
     white-space: nowrap;
   }
   .image-button img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
   }
   .image-button span {
-    font-size: 0.85em;
-    max-width: 80px;
+    font-size: 0.9em;
+    max-width: 100px;
   }
   .intro-decoration img {
-    width: 70px;
+    width: 130px;
   }
   .content-section {
     font-size: 1.05em;
