@@ -62,22 +62,36 @@ const App = () => {
     <div className="app">
       <div className="frame">
         {currentPage === 'intro' && (
-          <div className="intro">
-            <h1>ִִ ࣪✶⋆.˚Tiệm gà rán mihi chan˖°𓇼</h1>
-            <p>Commission: Closed.</p>
-            <div className="avatar">
-              <img 
-                src="/images/imageavata.png" 
-                alt="Mihi Chan Avatar" 
-                onClick={() => setShowSOS(!showSOS)}
-                style={{ cursor: 'pointer' }}
-              />
+          <div className="intro-container">
+            <div className={`intro ${showSOS ? 'blurred' : ''}`}>
+              <h1>ִִ ࣪✶⋆.˚Tiệm gà rán mihi chan˖°𓇼</h1>
+              <p>Commission: Closed.</p>
+              <div className="avatar">
+                <img 
+                  src="/images/imageavata.png" 
+                  alt="Mihi Chan Avatar" 
+                  onClick={() => setShowSOS(!showSOS)}
+                  style={{ cursor: 'pointer' }}
+                />
+              </div>
+              <div className="intro-text">
+                <p>Chào mừng quý khách đến với tiệm gà rán của mihi chan, rất hân hạnh được phục vụ các bạn ʕ ᵔᴥᵔ ʔ !</p>
+                <p>Hãy để tiệm gà của mihi chan phác họa nên những gam màu rực rỡ cho nhân vật của riêng bạn.</p>
+                <p>Liên hệ với page qua <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">mihichan</a></p>
+              </div>
             </div>
-            <div className="intro-text">
-              <p>Chào mừng quý khách đến với tiệm gà rán của mihi chan, rất hân hạnh được phục vụ các bạn ʕ ᵔᴥᵔ ʔ !</p>
-              <p>Hãy để tiệm gà của mihi chan phác họa nên những gam màu rực rỡ cho nhân vật của riêng bạn.</p>
-              <p>Liên hệ với page qua <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">mihichan</a></p>
-            </div>
+            {showSOS && (
+              <div className="sos-overlay-intro" onClick={() => setShowSOS(false)}>
+                <div className="sos-modal-intro" onClick={(e) => e.stopPropagation()}>
+                  <p className="sos-text">
+                    Mihi chan đang bị staff giam gửi tín hiệu SOS tới bạn<br/>
+                    Xin hãy giải cứu mihi chan khỏi bàn tay ác quỷ tại:<br/>
+                    ———<br/>
+                    <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">mihichan</a>
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         )}
         {currentPage === 'menu' && (
@@ -192,18 +206,6 @@ const App = () => {
           </button>
         </div>
       </div>
-      {showSOS && (
-        <div className="sos-overlay" onClick={() => setShowSOS(false)}>
-          <div className="sos-modal" onClick={(e) => e.stopPropagation()}>
-            <p className="sos-text">
-              Mihi chan đang bị staff giam gửi tín hiệu SOS tới bạn<br/>
-              Xin hãy giải cứu mihi chan khỏi bàn tay ác quỷ tại:<br/>
-              ———<br/>
-              <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">mihichan</a>
-            </p>
-          </div>
-        </div>
-      )}
       {zoomedImage && (
         <div className="modal" onClick={() => setZoomedImage(null)}>
           <img src={zoomedImage} alt="Zoomed" className="zoomed-image" />
