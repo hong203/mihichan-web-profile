@@ -151,10 +151,11 @@ button:hover {
 .content-section {
   margin-bottom: 2rem;
   background: rgba(255,255,255,0.8);
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 15px;
-  max-height: 60vh;
+  max-height: 70vh;
   overflow-y: auto;
+  font-size: 1.2em;
 }
 
 .menu-section h3 {
@@ -184,7 +185,7 @@ table {
 
 th, td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 12px;
   text-align: left;
 }
 
@@ -371,13 +372,13 @@ th {
 
 .sample-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 15px;
 }
 
 .sample-thumb {
   width: 100%;
-  height: 250px;
+  height: 300px;
   object-fit: contain;
   cursor: pointer;
   border-radius: 5px;
