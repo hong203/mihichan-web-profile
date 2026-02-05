@@ -148,11 +148,13 @@ button:hover {
   transform: scale(1.1);
 }
 
-.menu-section {
+.content-section {
   margin-bottom: 2rem;
   background: rgba(255,255,255,0.8);
   padding: 1rem;
   border-radius: 15px;
+  max-height: 60vh;
+  overflow-y: auto;
 }
 
 .menu-section h3 {
