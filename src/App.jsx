@@ -4,6 +4,24 @@ import './App.css'
 const App = () => {
   const [currentPage, setCurrentPage] = useState('intro')
   const [zoomedImage, setZoomedImage] = useState(null)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+
+  const handlePageChange = (page) => {
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentPage(page)
+      setIsTransitioning(false)
+    }, 150)
+  }
+  const [isTransitioning, setIsTransitioning] = useState(false)
+
+  const handlePageChange = (page) => {
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentPage(page)
+      setIsTransitioning(false)
+    }, 150)
+  }
 
   const sampleCategories = {
     'Commission design': [
@@ -66,8 +84,8 @@ const App = () => {
           </div>
         )}
         {currentPage === 'menu' && (
-          <div className="content-section">
-            <button className="home-btn" onClick={() => setCurrentPage('intro')}>✕</button>
+          <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+            <button className="home-btn" onClick={() => handlePageChange('intro')}>✕</button>
             <h2>Thực đơn</h2>
             <p>Đây là giá GỐC, chưa tính thêm details, tiền dt sẽ được tính theo độ phức tạp của brief ( trừ những loại splash art, drip marketing hsr gi, tcg đã tính đầy đủ giá không thu thêm phụ phí. )</p>
             <h3>Honkai Star Rail commission</h3>
@@ -117,8 +135,8 @@ const App = () => {
           </div>
         )}
         {currentPage === 'sample' && (
-          <div className="content-section">
-            <button className="home-btn" onClick={() => setCurrentPage('intro')}>✕</button>
+          <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+            <button className="home-btn" onClick={() => handlePageChange('intro')}>✕</button>
             {Object.entries(sampleCategories).map(([category, imgs]) => (
               <div key={category}>
                 <h3>{category}</h3>
@@ -132,8 +150,8 @@ const App = () => {
           </div>
         )}
         {currentPage === 'terms' && (
-          <div className="content-section">
-            <button className="home-btn" onClick={() => setCurrentPage('intro')}>✕</button>
+          <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+            <button className="home-btn" onClick={() => handlePageChange('intro')}>✕</button>
             <h2>Điều khoản dịch vụ</h2>
             <h3>Về giao dịch</h3>
             <p>Trong giao dịch, page sẽ rep tin nhắn trong thời gian sớm và nhanh nhất trong khả năng.</p>
@@ -164,9 +182,9 @@ const App = () => {
           </div>
         )}
         <div className="buttons">
-          <button onClick={() => setCurrentPage('menu')}>Thực đơn</button>
-          <button onClick={() => setCurrentPage('sample')}>Sample</button>
-          <button onClick={() => setCurrentPage('terms')}>Điều khoản</button>
+          <button onClick={() => handlePageChange('menu')}>Thực đơn</button>
+          <button onClick={() => handlePageChange('sample')}>Sample</button>
+          <button onClick={() => handlePageChange('terms')}>Điều khoản</button>
         </div>
       </div>
       {zoomedImage && (

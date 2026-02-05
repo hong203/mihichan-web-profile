@@ -3,6 +3,11 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 .app {
   width: 100vw;
   height: 100vh;
@@ -139,6 +144,14 @@
   overflow-y: auto;
   color: #333;
   position: relative;
+}
+
+.content-section.fade-in {
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+.content-section.fade-out {
+  animation: fadeOut 0.15s ease-out forwards;
 }
 
 .home-btn {
