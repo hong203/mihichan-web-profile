@@ -218,17 +218,6 @@ const App = () => {
         <h1>ִִ ࣪✶⋆.˚tiệm gà rán mihi chan ˖°𓇼 🌊 🐚 🫧</h1>
         <p>Commission: Closed.</p>
       </header>
-      <div className="carousel-section">
-        <h3>Menu & Info</h3>
-        <div className="carousel">
-          <div className="nav-icon" onClick={prevTab}>🍗</div>
-          <div className="tab-item" onClick={() => openModal(tabs[currentTab].content)}>
-            {tabs[currentTab].name}
-          </div>
-          <div className="nav-icon" onClick={nextTab}>🍗</div>
-        </div>
-      </div>
-
       <div className="profile-section">
         <div className="avatar">
           <img src="/images/imageavata.png" alt="Mihi Chan Avatar" />
@@ -237,6 +226,16 @@ const App = () => {
           <p>Chào mừng quý khách đến với tiệm gà rán của mihi chan, rất hân hạnh được phục vụ các bạn ʕ ᵔᴥᵔ ʔ !</p>
           <p>Hãy để tiệm gà của mihi chan phác họa nên những gam màu rực rỡ cho nhân vật của riêng bạn.</p>
           <p>Theo dõi page Facebook của chúng tôi: <a href="https://www.facebook.com/profile.php?id=61585840063897&locale=vi_VN" target="_blank" rel="noopener noreferrer">Mihi Chan</a></p>
+        </div>
+      </div>
+      <div className="carousel-section">
+        <h3>Menu & Info</h3>
+        <div className="carousel">
+          <div className="nav-icon" onClick={prevTab}>🍗</div>
+          <div className="tab-item" onClick={() => openModal(tabs[currentTab].content)}>
+            {tabs[currentTab].name}
+          </div>
+          <div className="nav-icon" onClick={nextTab}>🍗</div>
         </div>
       </div>
       
