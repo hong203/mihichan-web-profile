@@ -583,7 +583,11 @@ th {
     display: block;
   }
   .app {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
+  }
+  .content-section {
+    font-size: 1.4em;
+    line-height: 1.5;
   }
 }
 
