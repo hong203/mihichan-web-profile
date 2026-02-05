@@ -134,7 +134,7 @@ const App = () => {
     setTimeout(() => {
       setCurrentImage((prev) => (prev + 1) % images.length)
       setIsFading(false)
-    }, 250)
+    }, 500)
   }
 
   const prevImage = () => {
@@ -142,7 +142,7 @@ const App = () => {
     setTimeout(() => {
       setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
       setIsFading(false)
-    }, 250)
+    }, 500)
   }
 
   const nextTab = () => {
