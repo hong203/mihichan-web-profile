@@ -6,7 +6,7 @@
 .app {
   width: 100vw;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0;
   text-align: center;
   font-family: 'Comic Sans MS', cursive, sans-serif;
   background: linear-gradient(135deg, #f5f5dc, #daa520, #cd853f);
@@ -99,12 +99,12 @@
 }
 
 .gallery-image {
-  width: 70vw;
+  width: 100vw;
   height: 50vh;
   max-width: 700px;
   max-height: 500px;
   object-fit: contain;
-  margin: 0 1rem;
+  margin: 0;
   transition: transform 1s ease-in-out;
   border-radius: 10px;
 }
@@ -432,7 +432,7 @@ th {
 /* Responsive Design */
 @media (max-width: 768px) {
   .app {
-    padding: 0.25rem;
+    padding: 0;
   }
 
   .header h1 {
