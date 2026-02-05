@@ -177,15 +177,15 @@ const App = () => {
         )}
         <div className="buttons">
           <button className="image-button" onClick={() => handlePageChange('menu')}>
-            <img src="/images/₊˚ପ⊹ blu! (1).jpg" alt="Thực đơn" />
+            <img src="/images/IMG_9022.PNG" alt="Thực đơn" />
             <span>Thực đơn</span>
           </button>
           <button className="image-button" onClick={() => handlePageChange('sample')}>
-            <img src="/images/blue png.jpg" alt="Sample" />
+            <img src="/images/IMG_9023.PNG" alt="Sample" />
             <span>Sample</span>
           </button>
           <button className="image-button" onClick={() => handlePageChange('terms')}>
-            <img src="/images/download (2).jpg" alt="Điều khoản" />
+            <img src="/images/IMG_9024.PNG" alt="Điều khoản" />
             <span>Điều khoản</span>
           </button>
         </div>

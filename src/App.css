@@ -63,7 +63,7 @@ html, body {
   padding: 20px;
   border-radius: 15px;
   position: relative;
-  min-height: 60vh;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
 }
@@ -207,19 +207,22 @@ html, body {
   font-size: 0.95em;
   font-weight: bold;
   text-align: center;
-  max-width: 100px;
-  white-space: normal;
+  max-width: 110px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .intro-decoration {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 50%;
+  transform: translateX(50%);
   z-index: 5;
 }
 
 .intro-decoration img {
-  width: 100px;
+  width: 150px;
   height: auto;
   opacity: 0.85;
 }
@@ -230,6 +233,10 @@ html, body {
   color: #333;
   position: relative;
   font-size: 1.15em;
+  border: 2px solid #6082B6;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
 }
 
 .content-section.fade-in {
@@ -238,6 +245,11 @@ html, body {
 
 .content-section.fade-out {
   animation: fadeOut 0.15s ease-out forwards;
+}
+
+.content-section table {
+  border: none !important;
+  background: #6082B6;
 }
 
 .home-btn {
