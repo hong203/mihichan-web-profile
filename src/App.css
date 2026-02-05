@@ -32,8 +32,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   height: 100%;
   position: relative;
+  padding: 20px;
 }
 
 .intro h1 {
@@ -42,18 +44,21 @@
   -webkit-text-stroke: 1px #333;
   animation: glow 2s ease-in-out infinite alternate;
   margin: 0;
-  font-size: 1.5em;
+  font-size: 2em;
+  text-align: center;
 }
 
 .intro p {
   color: #99B5C8;
-  margin: 5px 0;
+  margin: 10px 0;
+  font-size: 1.2em;
+  text-align: center;
 }
 
 .intro .avatar {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
 }
 
 .intro .avatar img {
@@ -66,36 +71,35 @@
 
 .intro .intro-text {
   color: #333;
+  text-align: center;
   margin-top: auto;
-  padding-bottom: 20px;
 }
 
 .buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   margin-top: auto;
   padding-top: 20px;
 }
 
 .buttons button {
-  background: #99B5C8;
-  color: white;
-  border: none;
-  padding: 8px 12px;
+  background: transparent;
+  color: #99B5C8;
+  border: 2px solid #99B5C8;
+  padding: 10px 20px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 0.9em;
-  transition: background 0.3s;
+  font-size: 1em;
+  transition: background 0.3s, color 0.3s;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 150px;
+  min-width: 120px;
 }
 
 .buttons button:hover {
-  background: #7a9bb0;
+  background: #99B5C8;
+  color: white;
 }
 
 .content-section {
@@ -322,7 +326,10 @@ th {
     padding: 15px;
   }
   .intro h1 {
-    font-size: 1.2em;
+    font-size: 1.5em;
+  }
+  .intro p {
+    font-size: 1em;
   }
   .intro .avatar img {
     width: 60px;
@@ -330,12 +337,18 @@ th {
   }
   .buttons {
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
   .buttons button {
     width: 100%;
-    font-size: 0.8em;
+    background: transparent;
+    border: none;
+    color: #99B5C8;
     padding: 10px;
+    text-align: center;
+  }
+  .buttons button:hover {
+    background: rgba(153, 181, 200, 0.1);
   }
   .content-section {
     font-size: 1.2em;
