@@ -197,8 +197,7 @@ const App = () => {
           <div className="sos-modal" onClick={(e) => e.stopPropagation()}>
             <p className="sos-text">Mihi chan đang bị staff giam gửi tín hiệu SOS tới bạn</p>
             <p className="sos-text">Xin hãy giải cứu mihi chan khỏi bàn tay ác quỷ tại:</p>
-            <p className="sos-text">———</p>
-            <p className="sos-link"><a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">mihichan</a></p>
+            <p className="sos-text">————————————</p>
           </div>
         </div>
       )}
