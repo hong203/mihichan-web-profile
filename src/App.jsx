@@ -160,6 +160,7 @@ const App = () => {
           </div>
         )}
         <div className="buttons">
+          {currentPage !== 'intro' && <button onClick={() => setCurrentPage('intro')}>Trang chủ</button>}
           <button onClick={() => setCurrentPage('menu')}>Thực đơn</button>
           <button onClick={() => setCurrentPage('sample')}>Sample</button>
           <button onClick={() => setCurrentPage('terms')}>Điều khoản dịch vụ</button>

@@ -29,8 +29,11 @@
 }
 
 .intro {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
+  position: relative;
 }
 
 .intro h1 {
@@ -39,37 +42,39 @@
   -webkit-text-stroke: 1px #333;
   animation: glow 2s ease-in-out infinite alternate;
   margin: 0;
+  font-size: 1.5em;
 }
 
 .intro p {
   color: #99B5C8;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .intro .avatar {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
 }
 
 .intro .avatar img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #99B5C8;
 }
 
 .intro .intro-text {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
   color: #333;
+  margin-top: auto;
+  padding-bottom: 20px;
 }
 
 .buttons {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   margin-top: auto;
   padding-top: 20px;
 }
@@ -78,11 +83,15 @@
   background: #99B5C8;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 12px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 0.9em;
   transition: background 0.3s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
 }
 
 .buttons button:hover {
@@ -312,20 +321,25 @@ th {
     width: 95%;
     padding: 15px;
   }
+  .intro h1 {
+    font-size: 1.2em;
+  }
   .intro .avatar img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
   .buttons {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
   .buttons button {
     width: 100%;
+    font-size: 0.8em;
+    padding: 10px;
   }
   .content-section {
-    font-size: 1.4em;
-    line-height: 1.5;
+    font-size: 1.2em;
+    line-height: 1.4;
   }
 }
 
