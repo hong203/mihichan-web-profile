@@ -72,6 +72,9 @@ const App = () => {
               <p>Hãy để tiệm gà của mihi chan phác họa nên những gam màu rực rỡ cho nhân vật của riêng bạn.</p>
               <p>Liên hệ với page qua <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">mihichan</a></p>
             </div>
+            <div className="intro-decoration">
+              <img src="/images/We Heart It.gif" alt="Decoration" />
+            </div>
           </div>
         )}
         {currentPage === 'menu' && (
@@ -173,9 +176,18 @@ const App = () => {
           </div>
         )}
         <div className="buttons">
-          <button onClick={() => handlePageChange('menu')}>Thực đơn</button>
-          <button onClick={() => handlePageChange('sample')}>Sample</button>
-          <button onClick={() => handlePageChange('terms')}>Điều khoản</button>
+          <button className="image-button" onClick={() => handlePageChange('menu')}>
+            <img src="/images/₊˚ପ⊹ blu! (1).jpg" alt="Thực đơn" />
+            <span>Thực đơn</span>
+          </button>
+          <button className="image-button" onClick={() => handlePageChange('sample')}>
+            <img src="/images/blue png.jpg" alt="Sample" />
+            <span>Sample</span>
+          </button>
+          <button className="image-button" onClick={() => handlePageChange('terms')}>
+            <img src="/images/download (2).jpg" alt="Điều khoản" />
+            <span>Điều khoản</span>
+          </button>
         </div>
       </div>
       {zoomedImage && (
