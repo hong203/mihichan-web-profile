@@ -41,8 +41,16 @@
 
 @font-face {
   font-family: 'Linotte Bold';
-  src: url('/fonts/Linotte - Rounded Sans Family - VH/._Linotte Heavy.ttf') format('truetype');
+  src: url('/fonts/Linotte - Rounded Sans Family - VH/Linotte Bold.ttf') format('truetype');
   font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Itim';
+  src: url('/fonts/Itim-Regular.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
@@ -73,7 +81,7 @@ html, body {
   background-size: 150%;
   background-position: center;
   background-attachment: fixed;
-  font-family: 'Linotte Bold', 'Pacifico', sans-serif;
+  font-family: 'Itim', 'Pacifico', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
