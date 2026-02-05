@@ -185,7 +185,7 @@ const App = () => {
             <span>Sample</span>
           </button>
           <button className="image-button" onClick={() => handlePageChange('terms')}>
-            <img src="/images/IMG_9024.PNG" alt="Điều khoản" />
+            <img src="/images/IMG_9026.PNG" alt="Điều khoản" />
             <span>Điều khoản</span>
           </button>
         </div>
