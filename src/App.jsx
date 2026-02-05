@@ -4,8 +4,6 @@ import './App.css'
 const App = () => {
   const [currentImage, setCurrentImage] = useState(0)
   const [currentTab, setCurrentTab] = useState(0)
-  const [showModal, setShowModal] = useState(false)
-  const [isGalleryModal, setIsGalleryModal] = useState(false)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
   const [galleryTouchStart, setGalleryTouchStart] = useState(0)
@@ -47,15 +45,6 @@ const App = () => {
     const isRightSwipe = distance < -minSwipeDistance
     if (isLeftSwipe) nextImage()
     if (isRightSwipe) prevImage()
-  }
-
-  window.openLarge = (img) => {
-    const index = images.indexOf(img)
-    if (index !== -1) {
-      setCurrentImage(index)
-    }
-    setIsGalleryModal(true)
-    setShowModal(true)
   }
 
   const images = sampleImages
@@ -109,10 +98,6 @@ const App = () => {
 
   const prevTab = () => {
     setCurrentTab((prev) => (prev - 1 + 3) % 3)
-  }
-
-  const closeModal = () => {
-    setShowModal(false)
   }
 
   return (
@@ -206,7 +191,7 @@ const App = () => {
                 <h3>{category}</h3>
                 <div className="sample-grid">
                   {imgs.map(img => (
-                    <img key={img} src={img} alt="Sample" className="sample-thumb" onClick={() => window.openLarge(img)} />
+                    <img key={img} src={img} alt="Sample" className="sample-thumb" />
                   ))}
                 </div>
               </div>
@@ -260,19 +245,6 @@ const App = () => {
         </div>
         <div className="swipe-hint">🍗 Vuốt để xem thêm</div>
       </div>
-
-      {showModal && (
-        <div className="modal" onClick={closeModal} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-          {isGalleryModal && <div className="nav-icon prev" onClick={(e) => { e.stopPropagation(); prevImage(); }}>🍗</div>}
-          {isGalleryModal && <div className="nav-icon next" onClick={(e) => { e.stopPropagation(); nextImage(); }}>🍗</div>}
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <span className="close" onClick={closeModal}>&times;</span>
-            {isGalleryModal && (
-              <img src={images[currentImage]} alt="Large Sample" style={{maxWidth: '100vw', maxHeight: '100vh', display: 'block', margin: '0 auto'}} />
-            )}
-          </div>
-        </div>
-      )}
     </div>
   )
 }
