@@ -53,7 +53,7 @@ const App = () => {
 
   window.openLarge = (img) => {
     setIsGalleryModal(true)
-    setModalContent(`<img src="${img}" alt="Large Sample" style="max-width: 90%; max-height: 80vh; display: block; margin: 0 auto;" />`)
+    setModalContent(`<img src="${img}" alt="Large Sample" style="max-width: 100vw; max-height: 100vh; display: block; margin: 0 auto;" />`)
     setShowModal(true)
   }
 
