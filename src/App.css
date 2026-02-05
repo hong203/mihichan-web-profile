@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: 'Linotte Bold';
-  src: url('/fonts/Linotte - Rounded Sans Family - VH/Linotte Bold.ttf') format('truetype');
+  src: url('/fonts/Linotte - Rounded Sans Family - VH/._Linotte Heavy.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -81,7 +81,7 @@ html, body {
 }
 
 .frame {
-  background: rgba(238, 231, 220, 0.6);
+  background: rgba(238, 231, 220, 0.4);
   width: 80%;
   max-width: 800px;
   padding: 20px;
