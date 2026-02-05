@@ -460,6 +460,7 @@ th {
 
   .gallery {
     justify-content: center;
+    height: auto;
   }
 
   .carousel-section {
@@ -515,7 +516,7 @@ th {
 
   .gallery-image {
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .sample-grid {
