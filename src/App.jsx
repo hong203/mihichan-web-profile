@@ -11,7 +11,6 @@ const App = () => {
   const [touchEnd, setTouchEnd] = useState(0)
   const [galleryTouchStart, setGalleryTouchStart] = useState(0)
   const [galleryTouchEnd, setGalleryTouchEnd] = useState(0)
-  const [isFading, setIsFading] = useState(false)
 
   const minSwipeDistance = 30
 
@@ -126,19 +125,11 @@ const App = () => {
   ]
 
   const nextImage = () => {
-    setIsFading(true)
-    setTimeout(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length)
-      setIsFading(false)
-    }, 600)
+    setCurrentImage((prev) => (prev + 1) % images.length)
   }
 
   const prevImage = () => {
-    setIsFading(true)
-    setTimeout(() => {
-      setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
-      setIsFading(false)
-    }, 600)
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
   }
 
   const nextTab = () => {
@@ -283,7 +274,7 @@ const App = () => {
       <div className="gallery-section featured">
         <div className="gallery" onTouchStart={handleGalleryTouchStart} onTouchMove={handleGalleryTouchMove} onTouchEnd={handleGalleryTouchEnd}>
           <div className="nav-icon" onClick={prevImage}>🍗</div>
-          <img src={images[currentImage]} alt={`Sample ${currentImage + 1}`} className={`gallery-image slide ${!isFading ? 'is-active' : ''}`} />
+          <img src={images[currentImage]} alt={`Sample ${currentImage + 1}`} className="gallery-image" />
           <div className="nav-icon" onClick={nextImage}>🍗</div>
         </div>
         <div className="swipe-hint">🍗 Vuốt để xem thêm</div>
