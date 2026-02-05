@@ -59,7 +59,7 @@
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #f4a460;
+  border: 5px solid #99B5C8;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -70,7 +70,7 @@
 
 .info {
   text-align: left;
-  color: #8b4513;
+  color: #99B5C8;
 }
 
 .info p {
