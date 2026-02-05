@@ -331,6 +331,7 @@ th {
   max-height: 80%;
   overflow-y: auto;
   position: relative;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .prev, .next {
