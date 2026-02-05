@@ -31,6 +31,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'KAIGE';
+  src: url('/fonts/KAIGE.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -57,7 +65,7 @@ html, body {
   background-size: 150%;
   background-position: center;
   background-attachment: fixed;
-  font-family: 'VNI Courier', 'Pacifico', sans-serif;
+  font-family: 'KAIGE', 'Pacifico', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,7 +73,7 @@ html, body {
 }
 
 .frame {
-  background: rgba(238, 231, 220, 0.7);
+  background: rgba(238, 231, 220, 0.6);
   width: 80%;
   max-width: 800px;
   padding: 20px;
