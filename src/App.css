@@ -96,17 +96,29 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  height: 50vh;
+  overflow: hidden;
 }
 
 .gallery-image {
   width: 100vw;
-  height: 50vh;
+  height: 100%;
   max-width: 700px;
   max-height: 500px;
   object-fit: contain;
-  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
   transition: transform 1s ease-in-out;
   border-radius: 10px;
+}
+
+.gallery-image.current {
+  z-index: 2;
+}
+
+.gallery-image.next {
+  z-index: 1;
 }
 
 button {
