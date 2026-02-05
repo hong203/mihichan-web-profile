@@ -171,37 +171,31 @@ const App = () => {
           <div>
             <h2>Điều khoản dịch vụ</h2>
             <h3>Về giao dịch</h3>
-            <ul>
-              <li>Trong giao dịch, page sẽ rep tin nhắn trong thời gian sớm và nhanh nhất trong khả năng.</li>
-              <li>Khách lần đầu đặt vui lòng show bài check legit hoặc lịch sử giao dịch cho page check trước khi giao dịch.</li>
-              <li>Người giao dịch với khách là staff không phải artist, xin hãy rõ ràng trong khi giao dịch để tránh khó xử.</li>
-              <li>Nếu không hài lòng về tranh hoặc có vấn đề không ưng ý, hãy feedback sớm cho bên staff để chúng tôi liên lạc với artist sửa chữa hoàn thiện. Chúng tôi không chịu trách nhiệm thêm về commission sau khi giao dịch đã hoàn tất.</li>
-              <li>Không nhận chuyển khoản trước kể cả cọc, thanh toán 100% sau khi hoàn thiện com. Thanh toán trong vòng 2 ngày sau khi hoàn thiện, nếu có việc gấp, lí do chính đáng sẽ được gia hạn tối đa 5 ngày để hoàn thành chuyển khoản. Sau 1 tuần không chuyển khoản full sẽ được đưa vào blacklist cấm giao dịch.</li>
-              <li>Gift sẽ được tặng ngẫu nhiên, hỗ trợ des tính 30% giá com des hoàn chỉnh.</li>
-              <li>Deadline theo khách đặt, có nhận deadline gấp nhưng hạn chế số lượng, để artist có thể hoàn thiện com được tốt nhất có thể.</li>
-              <li>Mỗi lần mở 2 slot, pick slot random và brief phù hợp với khả năng của hoạ sĩ. Hoàn thiện xong sẽ mở đợt mới ( không có thời gian cụ thể hay báo trước ). Comment vào bài nhận com để lấy slot.</li>
-              <li>Bên mình huỷ com bất chợt sẽ có bồi thường gift nhỏ cho khách.</li>
-              <li>Artist có quyền từ chối giao dịch commission, sẽ có list riêng những người cấm giao dịch.</li>
-              <li>Không reup, feed tranh commission cho AI, ăn cắp chất xám, heavy ref, trace tranh,..</li>
-              <li>Sẽ được đổi loại commission trong khả năng artist cho phép.</li>
-              <li>Không cho đổi brief đột xuất, nếu đã chốt rồi không được đổi.</li>
-            </ul>
+            <p>Trong giao dịch, page sẽ rep tin nhắn trong thời gian sớm và nhanh nhất trong khả năng.</p>
+            <p>Khách lần đầu đặt vui lòng show bài check legit hoặc lịch sử giao dịch cho page check trước khi giao dịch.</p>
+            <p>Người giao dịch với khách là staff không phải artist, xin hãy rõ ràng trong khi giao dịch để tránh khó xử.</p>
+            <p>Nếu không hài lòng về tranh hoặc có vấn đề không ưng ý, hãy feedback sớm cho bên staff để chúng tôi liên lạc với artist sửa chữa hoàn thiện. Chúng tôi không chịu trách nhiệm thêm về commission sau khi giao dịch đã hoàn tất.</p>
+            <p>Không nhận chuyển khoản trước kể cả cọc, thanh toán 100% sau khi hoàn thiện com. Thanh toán trong vòng 2 ngày sau khi hoàn thiện, nếu có việc gấp, lí do chính đáng sẽ được gia hạn tối đa 5 ngày để hoàn thành chuyển khoản. Sau 1 tuần không chuyển khoản full sẽ được đưa vào blacklist cấm giao dịch.</p>
+            <p>Gift sẽ được tặng ngẫu nhiên, hỗ trợ des tính 30% giá com des hoàn chỉnh.</p>
+            <p>Deadline theo khách đặt, có nhận deadline gấp nhưng hạn chế số lượng, để artist có thể hoàn thiện com được tốt nhất có thể.</p>
+            <p>Mỗi lần mở 2 slot, pick slot random và brief phù hợp với khả năng của hoạ sĩ. Hoàn thiện xong sẽ mở đợt mới ( không có thời gian cụ thể hay báo trước ). Comment vào bài nhận com để lấy slot.</p>
+            <p>Bên mình huỷ com bất chợt sẽ có bồi thường gift nhỏ cho khách.</p>
+            <p>Artist có quyền từ chối giao dịch commission, sẽ có list riêng những người cấm giao dịch.</p>
+            <p>Không reup, feed tranh commission cho AI, ăn cắp chất xám, heavy ref, trace tranh,..</p>
+            <p>Sẽ được đổi loại commission trong khả năng artist cho phép.</p>
+            <p>Không cho đổi brief đột xuất, nếu đã chốt rồi không được đổi.</p>
             <h3>Về Commission</h3>
-            <ul>
-              <li>Quá trình update comm: sketch - final</li>
-              <li>Free sửa 5 lần, những lần sửa sau + 10k</li>
-              <li>Phí edit free.</li>
-              <li>Khi update commission, bên mình sẽ giảm chất lượng hd, kí hoặc gắn wtm để khách check tranh, sau khi hoàn thành thanh toán sẽ giao file hd.</li>
-              <li>Brief cần có yêu cầu như sau: + Nhân vật: reference, tính cách, biểu cảm mong muốn. + Pose, ref background, tone màu mong muốn, hướng sáng, vibe tranh. + Phải có hình ảnh minh hoạ rõ ràng, có thể phác người que nhà cửa một mẩu miễn là nhìn được. + Để trong link gg docs, notion, file riêng, etc để không bị trôi lạc mất idea.</li>
-            </ul>
+            <p>Quá trình update comm: sketch - final</p>
+            <p>Free sửa 5 lần, những lần sửa sau + 10k</p>
+            <p>Phí edit free.</p>
+            <p>Khi update commission, bên mình sẽ giảm chất lượng hd, kí hoặc gắn wtm để khách check tranh, sau khi hoàn thành thanh toán sẽ giao file hd.</p>
+            <p>Brief cần có yêu cầu như sau: + Nhân vật: reference, tính cách, biểu cảm mong muốn. + Pose, ref background, tone màu mong muốn, hướng sáng, vibe tranh. + Phải có hình ảnh minh hoạ rõ ràng, có thể phác người que nhà cửa một mẩu miễn là nhìn được. + Để trong link gg docs, notion, file riêng, etc để không bị trôi lạc mất idea.</p>
             <h3>Lưu ý</h3>
             <p>Không nhận char không có design, không hỗ trợ idea commission.</p>
             <h3>Về Credit và giới thiệu</h3>
-            <ul>
-              <li>Credit tên page, không được thiếu cre.</li>
-              <li>Giới thiệu page cho khách khác phải có sự cho phép của page, giới thiệu với ai phải cho page check qua trước.</li>
-              <li>Vì là liên lạc trung gian qua staff nên vui lòng không tra hỏi thông tin đời tư của hoạ sĩ.</li>
-            </ul>
+            <p>Credit tên page, không được thiếu cre.</p>
+            <p>Giới thiệu page cho khách khác phải có sự cho phép của page, giới thiệu với ai phải cho page check qua trước.</p>
+            <p>Vì là liên lạc trung gian qua staff nên vui lòng không tra hỏi thông tin đời tư của hoạ sĩ.</p>
           </div>
         )}
       </div>

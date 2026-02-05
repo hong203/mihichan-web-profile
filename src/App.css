@@ -582,6 +582,9 @@ th {
   .nav-icon {
     display: block;
   }
+  .app {
+    font-family: sans-serif;
+  }
 }
 
 @media (min-width: 769px) {
