@@ -7,6 +7,15 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Graphite Light';
+  src: url('/fonts/Graphite-Light.woff2') format('woff2'),
+       url('/fonts/Graphite-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -33,7 +42,7 @@ html, body {
   background-size: 150%;
   background-position: center;
   background-attachment: fixed;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Graphite Light', 'Pacifico', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
