@@ -296,13 +296,19 @@ html, body {
   border: 2px solid #6082B6;
   outline: none;
   color: #6082B6;
-  font-size: 1.5em;
+  font-size: 1em;
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 6px 8px;
   transition: transform 0.3s ease;
   z-index: 10;
   -webkit-appearance: none;
   appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
 }
 
 .home-btn:hover {
