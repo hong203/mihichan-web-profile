@@ -47,8 +47,6 @@ const App = () => {
     if (isRightSwipe) prevImage()
   }
 
-  const images = sampleImages
-
   const sampleCategories = {
     'Commission design': [
       '/images/received_1570674027701435.webp',
@@ -83,6 +81,8 @@ const App = () => {
       '/images/received_3203525419806902.webp'
     ]
   }
+
+  const images = Object.values(sampleCategories).flat()
 
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % images.length)
