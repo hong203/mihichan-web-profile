@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@font-face {
+  font-family: 'DFVN-Hangout';
+  src: url('/fonts/DFVN-Hangout-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -17,7 +26,7 @@
   background-size: 150%;
   background-position: center;
   background-attachment: fixed;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: 'Pacifico', cursive;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,6 +61,7 @@
   margin: 0 0 10px 0;
   font-size: 2em;
   text-align: center;
+  font-family: 'DFVN-Hangout', cursive;
   grid-column: 1 / -1;
   width: 100%;
 }
@@ -186,6 +196,7 @@
   text-shadow: 2px 2px #EEE7DC, 0 0 10px rgba(96, 130, 182, 0.5);
   -webkit-text-stroke: 1px #333;
   animation: glow 2s ease-in-out infinite alternate;
+  font-family: 'DFVN-Hangout', cursive;
 }
 
 @keyframes glow {
@@ -619,7 +630,7 @@ th {
   max-height: 80%;
   overflow-y: auto;
   position: relative;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: 'Pacifico', cursive;
 }
 
 .prev, .next {
