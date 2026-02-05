@@ -89,7 +89,7 @@ html, body {
 }
 
 .frame {
-  background: rgba(238, 231, 220, 0.9);
+  background: rgba(238, 231, 220, 0.8);
   width: 80%;
   max-width: 800px;
   padding: 20px;
@@ -293,7 +293,7 @@ html, body {
   top: 15px;
   right: 15px;
   background: transparent;
-  border: none;
+  border: 2px solid #6082B6;
   outline: none;
   color: #6082B6;
   font-size: 1.5em;
