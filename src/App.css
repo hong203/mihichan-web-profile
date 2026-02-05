@@ -90,7 +90,7 @@ html, body {
 }
 
 .intro > p:nth-child(2) {
-  color: #6082B6;
+  color: #333;
   margin: 0 0 15px 0;
   font-size: 1.35em;
   text-align: center;
@@ -116,7 +116,7 @@ html, body {
 .intro .intro-text {
   grid-column: 1;
   grid-row: 3;
-  color: #6082B6;
+  color: #333;
   max-width: 100%;
 }
 
@@ -124,11 +124,11 @@ html, body {
   margin: 10px 0;
   font-size: 1.25em;
   line-height: 1.6;
-  color: #6082B6;
+  color: #333;
 }
 
 .intro .intro-text a {
-  color: #6082B6;
+  color: #333;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
@@ -210,7 +210,7 @@ html, body {
 }
 
 .image-button span {
-  color: #6082B6;
+  color: #333;
   font-size: 1em;
   font-weight: bold;
   text-align: center;
