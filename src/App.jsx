@@ -80,6 +80,41 @@ const App = () => {
 
   const images = sampleImages
 
+  const sampleCategories = {
+    'Commission design': [
+      '/images/received_1570674027701435.webp',
+      '/images/received_2161330058030449.webp',
+      '/images/Messenger_creation_2182361892292925.webp',
+      '/images/received_854452750556527.webp',
+      '/images/received_1175087241017516.webp',
+      '/images/received_1368443194344526.webp',
+      '/images/received_1384825243370872.webp',
+      '/images/received_1394072818797196.webp'
+    ],
+    'Drip marketing genshin': [
+      '/images/Messenger_creation_756844766847047.webp',
+      '/images/received_1393896148809879.webp',
+      '/images/received_1416997689810660.webp',
+      '/images/received_1449657256723766.webp',
+      '/images/received_1562638098389272.webp'
+    ],
+    'Drip marketing honkai': [
+      '/images/received_744932198650957.webp',
+      '/images/received_919209520529917.webp'
+    ],
+    'Commissions sinh nhật': [
+      '/images/received_1117452703657446.webp',
+      '/images/received_1311826354045520.webp'
+    ],
+    'Commission PV': [
+      '/images/received_1412281827057662.webp'
+    ],
+    'Commission tranh lễ': [
+      '/images/received_1236150855045834.webp',
+      '/images/received_3203525419806902.webp'
+    ]
+  }
+
   const tabs = [
     { name: 'Thực đơn', content: 'menu' },
     { name: 'Sample', content: 'samples' },
@@ -200,9 +235,12 @@ const App = () => {
     } else if (content === 'samples') {
       setModalContent(`
         <h2>Samples</h2>
-        <div class="sample-grid">
-          ${sampleImages.map(img => `<img src="${img}" alt="Sample" class="sample-thumb" onclick="window.openLarge('${img}')" />`).join('')}
-        </div>
+        ${Object.entries(sampleCategories).map(([category, imgs]) => `
+          <h3>${category}</h3>
+          <div class="sample-grid">
+            ${imgs.map(img => `<img src="${img}" alt="Sample" class="sample-thumb" onclick="window.openLarge('${img}')" />`).join('')}
+          </div>
+        `).join('')}
       `)
     }
     setShowModal(true)
