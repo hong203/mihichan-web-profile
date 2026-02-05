@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 const App = () => {
@@ -14,6 +14,14 @@ const App = () => {
   const [isFading, setIsFading] = useState(false)
 
   const minSwipeDistance = 30
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextImage()
+    }, 5000) // 5 seconds
+
+    return () => clearInterval(interval)
+  }, [])
 
   const handleTouchStart = (e) => {
     setTouchEnd(0)
@@ -278,7 +286,6 @@ const App = () => {
       </div>
       
       <div className="gallery-section featured">
-        <h3>Samples</h3>
         <div className="gallery" onTouchStart={handleGalleryTouchStart} onTouchMove={handleGalleryTouchMove} onTouchEnd={handleGalleryTouchEnd}>
           <div className="nav-icon left" onClick={prevImage}>🍗</div>
           <img src={images[currentImage]} alt={`Sample ${currentImage + 1}`} className="gallery-image" style={{ opacity: isFading ? 0 : 1 }} />
