@@ -55,6 +55,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'BROKEN15';
+  src: url('/fonts/BROKEN15.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -145,6 +153,13 @@ html, body {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #6082B6;
+  cursor: url('/images/cursor.svg') 0 0, pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.intro .avatar img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1) drop-shadow(0 0 10px rgba(96, 130, 182, 0.6));
 }
 
 .intro .intro-text {
@@ -539,6 +554,65 @@ th {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+}
+
+.sos-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  backdrop-filter: blur(5px);
+}
+
+.sos-modal {
+  background: rgba(0, 0, 0, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.5);
+  border: 3px solid #FF0000;
+  animation: sosShake 0.5s ease-in-out;
+}
+
+@keyframes sosShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.sos-text {
+  font-family: 'BROKEN15', cursive;
+  color: #FF0000;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.8;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+  animation: sosPulse 1.5s ease-in-out infinite;
+}
+
+.sos-text a {
+  color: #FF3333;
+  text-decoration: underline;
+  font-weight: bolder;
+  transition: color 0.3s;
+}
+
+.sos-text a:hover {
+  color: #FFFF00;
+  text-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+}
+
+@keyframes sosPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
 }
 
 .zoomed-image {
