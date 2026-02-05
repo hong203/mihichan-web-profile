@@ -97,7 +97,6 @@ const App = () => {
                 <tr><td>Bé trai, bé gái</td><td>1tr2</td></tr>
                 <tr><td>Illust</td><td>chest 300, half 450, thigh 900, full body 1tr2 - 1tr5</td></tr>
                 <tr><td>PV</td><td>950 - 1tr1</td></tr>
-                <tr><td>Design</td><td>mặt trước/ mặt sau: 300/ 1 mặt, mặt bên 200/ 1 mặt</td></tr>
               </tbody>
             </table>
             <h3>Genshin Impact commission</h3>
