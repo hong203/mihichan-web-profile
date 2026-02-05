@@ -432,10 +432,11 @@ th {
 @media (max-width: 768px) {
   .app {
     padding: 0.5rem;
+    font-size: 16px;
   }
 
   .header h1 {
-    font-size: 2em;
+    font-size: 2.5em;
   }
 
   .profile-section {
@@ -460,7 +461,7 @@ th {
 
   .gallery {
     justify-content: center;
-    height: auto;
+    height: 70vh;
   }
 
   .carousel-section {
@@ -515,7 +516,7 @@ th {
   }
 
   .gallery-image {
-    height: auto;
+    height: 100%;
     object-fit: contain;
   }
 
