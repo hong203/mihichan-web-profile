@@ -72,9 +72,6 @@ const App = () => {
               <p>Hãy để tiệm gà của mihi chan phác họa nên những gam màu rực rỡ cho nhân vật của riêng bạn.</p>
               <p>Liên hệ với page qua <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">mihichan</a></p>
             </div>
-            <div className="intro-decoration">
-              <img src="/images/We Heart It.gif" alt="Decoration" />
-            </div>
           </div>
         )}
         {currentPage === 'menu' && (

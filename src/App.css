@@ -239,19 +239,6 @@ html, body {
   height: 1.2em;
 }
 
-.intro-decoration {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  z-index: 5;
-}
-
-.intro-decoration img {
-  width: 200px;
-  height: auto;
-  opacity: 0.85;
-}
-
 .content-section {
   flex: 1;
   overflow-y: auto;
@@ -579,9 +566,6 @@ th {
   .image-button span {
     font-size: 0.9em;
     max-width: 100px;
-  }
-  .intro-decoration img {
-    width: 130px;
   }
   .content-section {
     font-size: 1.05em;
