@@ -544,9 +544,9 @@ button:hover {
 .content-section {
   margin-bottom: 2rem;
   background: rgba(242, 236, 228, 0.9);
-  padding: 1.5rem;
+  padding: 20px;
   border-radius: 15px;
-  max-height: 70vh;
+  max-height: 90vh;
   overflow-y: auto;
   font-size: 1.2em;
 }
@@ -714,8 +714,8 @@ th {
   .content-section {
     font-size: 1em;
     line-height: 1.5;
-    padding: 12px 15px;
-    max-height: 65vh;
+    padding: 5px 10px 20px 10px;
+    max-height: 85vh;
     overflow-y: auto;
   }
   .content-section h2 {
