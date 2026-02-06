@@ -666,7 +666,7 @@ th {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 5px 0 0 0;
-    margin-top: auto;
+    margin-top: 15px;
     width: 100%;
   }
   .buttons button {
@@ -687,7 +687,7 @@ th {
     height: 75px;
   }
   .image-button span {
-    font-size: 1em;
+    font-size: 0.85em;
     max-width: 100px;
     line-height: 1.2;
   }
