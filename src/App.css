@@ -558,73 +558,84 @@ th {
 @media (max-width: 768px) {
   .frame {
     width: 95%;
-    padding: 10px 12px;
+    padding: 8px 10px 5px 10px;
     max-height: none;
     height: auto;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     min-height: auto;
+    gap: 0;
   }
   .intro {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 5px;
     grid-template-rows: auto;
-    margin-bottom: 8px;
+    margin-bottom: 0;
   }
   .intro h1 {
-    font-size: 1.3em;
-    margin: 0 0 5px 0;
-    line-height: 1.4;
+    font-size: 1.2em;
+    margin: 0 0 2px 0;
+    line-height: 1.3;
+    padding: 0;
   }
   .intro > p:nth-child(2) {
-    font-size: 0.95em;
-    margin: 0 0 5px 0;
+    font-size: 0.9em;
+    margin: 0 0 2px 0;
+    padding: 0;
   }
   .intro .avatar {
     grid-column: 1;
     grid-row: auto;
     justify-content: center;
-    margin: 5px 0;
+    margin: 2px 0;
   }
   .intro .avatar img {
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
   }
   .intro .intro-text {
     grid-column: 1;
     grid-row: auto;
     max-width: 100%;
+    margin: 0;
+    padding: 0;
   }
   .intro .intro-text p {
-    font-size: 1em;
-    margin: 4px 0;
-    line-height: 1.4;
+    font-size: 0.95em;
+    margin: 2px 0;
+    line-height: 1.25;
+    padding: 0;
   }
   .buttons {
     flex-direction: row;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 8px 3px;
-    margin-top: 0;
+    padding: 3px 0 0 0;
+    margin-top: 3px;
+    width: 100%;
   }
   .buttons button {
     flex: 1 1 auto;
-    min-width: 90px;
-    max-width: 150px;
-    padding: 8px 10px;
-    font-size: 0.9em;
+    min-width: 80px;
+    max-width: 140px;
+    padding: 5px 6px;
+    font-size: 0.8em;
     min-height: auto;
     white-space: normal;
   }
+  .image-button {
+    gap: 4px;
+    padding: 3px;
+  }
   .image-button img {
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
   }
   .image-button span {
-    font-size: 0.85em;
-    max-width: 95px;
-    line-height: 1.1;
+    font-size: 0.8em;
+    max-width: 90px;
+    line-height: 1;
   }
   .content-section {
     font-size: 1em;
