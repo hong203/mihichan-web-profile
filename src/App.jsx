@@ -6,6 +6,7 @@ const App = () => {
   const [zoomedImage, setZoomedImage] = useState(null)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [showSOS, setShowSOS] = useState(false)
+  const [gameFilter, setGameFilter] = useState('all')
 
   const handlePageChange = (page) => {
     setIsTransitioning(true)
@@ -16,38 +17,55 @@ const App = () => {
   }
 
   const sampleCategories = {
-    'Commission design': [
-      '/images/received_1570674027701435.webp',
-      '/images/received_2161330058030449.webp',
-      '/images/Messenger_creation_2182361892292925.webp',
-      '/images/received_854452750556527.webp',
-      '/images/received_1175087241017516.webp',
-      '/images/received_1368443194344526.webp',
-      '/images/received_1384825243370872.webp',
-      '/images/received_1394072818797196.webp'
-    ],
-    'Drip marketing genshin': [
-      '/images/Messenger_creation_756844766847047.webp',
-      '/images/received_1393896148809879.webp',
-      '/images/received_1416997689810660.webp',
-      '/images/received_1449657256723766.webp',
-      '/images/received_1562638098389272.webp'
-    ],
-    'Drip marketing honkai': [
-      '/images/received_744932198650957.webp',
-      '/images/received_919209520529917.webp'
-    ],
-    'Commissions sinh nhật': [
-      '/images/received_1117452703657446.webp',
-      '/images/received_1311826354045520.webp'
-    ],
-    'Commission PV': [
-      '/images/received_1412281827057662.webp'
-    ],
-    'Commission tranh lễ': [
-      '/images/received_1236150855045834.webp',
-      '/images/received_3203525419806902.webp'
-    ]
+    genshin: {
+      'Commission design Genshin Impact': [
+        '/images/Messenger_creation_2182361892292925.webp',
+        '/images/received_2161330058030449.webp'
+      ],
+      'Commission tranh lễ của Genshin Impact': [],
+      'Commissions sinh nhật Genshin Impact': [
+        '/images/received_1117452703657446.webp',
+        '/images/received_1311826354045520.webp'
+      ],
+      'Drip marketing Genshin Impact': [
+        '/images/Messenger_creation_756844766847047.webp',
+        '/images/received_1393896148809879.webp',
+        '/images/received_1416997689810660.webp',
+        '/images/received_1449657256723766.webp',
+        '/images/received_1562638098389272.webp',
+        '/images/received_1701172437935441.webp'
+      ],
+      'Commission PV Genshin Impact': [
+        '/images/received_1412281827057662.webp',
+        '/images/received_25243662968662600.webp'
+      ]
+    },
+    honkai: {
+      'Commission design Honkai Star Rail': [
+        '/images/received_854452750556527.webp',
+        '/images/received_1175087241017516.webp',
+        '/images/received_1368443194344526.webp',
+        '/images/received_1384825243370872.webp',
+        '/images/received_1394072818797196.webp',
+        '/images/received_1570674027701435.webp'
+      ],
+      'Commission tranh lễ của Honkai Star Rail': [
+        '/images/received_1236150855045834.webp',
+        '/images/received_3203525419806902.webp'
+      ],
+      'Drip marketing Honkai Star Rail': [
+        '/images/received_919209520529917.webp',
+        '/images/received_744932198650957.webp'
+      ],
+      'Commission PV Honkai Star Rail': []
+    }
+  }
+
+  const getVisibleCategories = () => {
+    if (gameFilter === 'all') {
+      return { ...sampleCategories.genshin, ...sampleCategories.honkai }
+    }
+    return sampleCategories[gameFilter] || {}
   }
 
   const nextTab = () => {
@@ -64,15 +82,15 @@ const App = () => {
         {currentPage === 'intro' && (
           <>
             <div className="intro">
-              <h1>ִִ ࣪✶⋆.˚Tiệm gà rán mihi chan˖°𓇼</h1>
+              <h1>ִִ ࣪✶⋆.˚Tiệm gà rán Mihi chan˖°𓇼</h1>
               <p>Commission: Closed.</p>
               <div className="avatar" onClick={() => setShowSOS(true)}>
-                <img src="/images/imageavata.png" alt="Mihi Chan Avatar" />
+                <img src="/images/imageavata.png" alt="Mihi chan Avatar" />
               </div>
               <div className="intro-text">
-                <p>Chào mừng quý khách đến với tiệm gà rán của mihi chan, rất hân hạnh được phục vụ các bạn ʕ ᵔᴥᵔ ʔ !</p>
-                <p>Hãy để tiệm gà của mihi chan phác họa nên những gam màu rực rỡ cho nhân vật của riêng bạn.</p>
-                <p>Liên hệ với page qua <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">mihichan</a></p>
+                <p>Chào mừng quý khách đến với tiệm gà rán của Mihi chan, rất hân hạnh được phục vụ các bạn ʕ ᵔᴥᵔ ʔ !</p>
+                <p>Hãy để tiệm gà của Mihi chan phác họa nên những gam màu rực rỡ cho nhân vật của riêng bạn.</p>
+                <p>Liên hệ với page qua <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">Mihi chan</a></p>
               </div>
             </div>
             <button className="queue-button" onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}>
@@ -133,14 +151,32 @@ const App = () => {
         {currentPage === 'sample' && (
           <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
             <button className="home-btn" onClick={() => handlePageChange('intro')}>✕</button>
-            {Object.entries(sampleCategories).map(([category, imgs]) => (
+            <div className="game-filter-buttons">
+              <button 
+                className={`game-filter-btn ${gameFilter === 'genshin' ? 'active' : ''}`}
+                onClick={() => setGameFilter('genshin')}
+              >
+                Genshin Impact
+              </button>
+              <button 
+                className={`game-filter-btn ${gameFilter === 'honkai' ? 'active' : ''}`}
+                onClick={() => setGameFilter('honkai')}
+              >
+                Honkai Star Rail
+              </button>
+            </div>
+            {Object.entries(getVisibleCategories()).map(([category, imgs]) => (
               <div key={category}>
                 <h3>{category}</h3>
-                <div className="sample-grid">
-                  {imgs.map(img => (
-                    <img key={img} src={img} alt="Sample" className="sample-thumb" onClick={() => setZoomedImage(img)} />
-                  ))}
-                </div>
+                {imgs.length === 0 ? (
+                  <p className="empty-category">Mihi chan quá lười để vẽ Sample</p>
+                ) : (
+                  <div className="sample-grid">
+                    {imgs.map(img => (
+                      <img key={img} src={img} alt="Sample" className="sample-thumb" onClick={() => setZoomedImage(img)} />
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -201,7 +237,7 @@ const App = () => {
         <div className="sos-overlay" onClick={() => setShowSOS(false)}>
           <div className="sos-modal" onClick={(e) => e.stopPropagation()}>
             <p className="sos-text">Mihi chan đang bị staff giam gửi tín hiệu SOS tới bạn</p>
-            <p className="sos-text">Xin hãy giải cứu mihi chan khỏi bàn tay ác quỷ tại:</p>
+            <p className="sos-text">Xin hãy giải cứu Mihi chan khỏi bàn tay ác quỷ tại:</p>
             <p className="sos-text">————————————</p>
           </div>
         </div>
