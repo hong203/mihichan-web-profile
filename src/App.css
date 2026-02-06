@@ -558,7 +558,7 @@ th {
 @media (max-width: 768px) {
   .frame {
     width: 95%;
-    padding: 8px 10px 15px 10px;
+    padding: 8px 10px 20px 10px;
     max-height: none;
     height: auto;
     margin-top: 5px;
@@ -633,9 +633,9 @@ th {
     height: 75px;
   }
   .image-button span {
-    font-size: 0.8em;
-    max-width: 90px;
-    line-height: 1;
+    font-size: 0.95em;
+    max-width: 100px;
+    line-height: 1.2;
   }
   .content-section {
     font-size: 1em;
