@@ -50,14 +50,6 @@ const App = () => {
     ]
   }
 
-  const nextTab = () => {
-    setCurrentTab((prev) => (prev + 1) % 3)
-  }
-
-  const prevTab = () => {
-    setCurrentTab((prev) => (prev - 1 + 3) % 3)
-  }
-
   return (
     <div className="app">
       <div className="frame">
