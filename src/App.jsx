@@ -141,7 +141,6 @@ const App = () => {
         )}
         {currentPage === 'sample' && (
           <>
-          <>
             <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
               <button className="home-btn" onClick={() => handlePageChange('intro')}>✕</button>
             {Object.entries(sampleCategories).map(([category, imgs]) => (
@@ -172,7 +171,6 @@ const App = () => {
           </>
         )}
         {currentPage === 'terms' && (
-          <>
           <>
             <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
               <button className="home-btn" onClick={() => handlePageChange('intro')}>✕</button>
