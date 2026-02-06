@@ -558,16 +558,18 @@ th {
 @media (max-width: 768px) {
   .frame {
     width: 95%;
-    padding: 12px 15px;
+    padding: 10px 12px;
     max-height: none;
     height: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    min-height: auto;
   }
   .intro {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
     grid-template-rows: auto;
+    margin-bottom: 8px;
   }
   .intro h1 {
     font-size: 1.3em;
@@ -585,8 +587,8 @@ th {
     margin: 5px 0;
   }
   .intro .avatar img {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
   .intro .intro-text {
     grid-column: 1;
@@ -600,11 +602,11 @@ th {
   }
   .buttons {
     flex-direction: row;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 10px 5px;
-    margin-top: 10px;
+    padding: 8px 3px;
+    margin-top: 0;
   }
   .buttons button {
     flex: 1 1 auto;
@@ -616,13 +618,13 @@ th {
     white-space: normal;
   }
   .image-button img {
-    width: 85px;
-    height: 85px;
+    width: 80px;
+    height: 80px;
   }
   .image-button span {
-    font-size: 0.9em;
-    max-width: 100px;
-    line-height: 1.2;
+    font-size: 0.85em;
+    max-width: 95px;
+    line-height: 1.1;
   }
   .content-section {
     font-size: 1em;
