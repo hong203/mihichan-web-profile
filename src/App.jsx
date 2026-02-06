@@ -74,9 +74,10 @@ const App = () => {
           </>
         )}
         {currentPage === 'menu' && (
-          <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
-            <button className="home-btn" onClick={() => handlePageChange('intro')}>✕</button>
-            <h2>Thực đơn</h2>
+          <>
+            <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+              <button className="home-btn" onClick={() => handlePageChange('intro')}>✕</button>
+              <h2>Thực đơn</h2>
             <p>Đây là giá GỐC, chưa tính thêm details, tiền dt sẽ được tính theo độ phức tạp của brief ( trừ những loại splash art, drip marketing hsr gi, tcg đã tính đầy đủ giá không thu thêm phụ phí. )</p>
             <h3>Honkai Star Rail commission</h3>
             <table>
@@ -120,9 +121,9 @@ const App = () => {
             <p>Details char: 20 - 100</p>
             <p>Details bg: 50 - 400</p>
             <p>Phí private: 70%</p>
-            <p>Phí thương mại x 5</p>
-          </div>
-          <div className="buttons">
+              <p>Phí thương mại x 5</p>
+            </div>
+            <div className="buttons">
             <button className="image-button" onClick={() => handlePageChange('menu')}>
               <img src="/images/IMG_9022.PNG" alt="Thực đơn" />
               <span>Thực đơn</span>
@@ -135,10 +136,12 @@ const App = () => {
               <img src="/images/IMG_9026.PNG" alt="Điều khoản" />
               <span>Điều khoản</span>
             </button>
-          </div>
+            </div>
+          </>
         )}
         {currentPage === 'sample' && (
-          <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+          <>
+            <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
             <button className="home-btn" onClick={() => handlePageChange('intro')}>✕</button>
             {Object.entries(sampleCategories).map(([category, imgs]) => (
               <div key={category}>
@@ -150,8 +153,8 @@ const App = () => {
                 </div>
               </div>
             ))}
-          </div>
-          <div className="buttons">
+            </div>
+            <div className="buttons">
             <button className="image-button" onClick={() => handlePageChange('menu')}>
               <img src="/images/IMG_9022.PNG" alt="Thực đơn" />
               <span>Thực đơn</span>
@@ -164,10 +167,12 @@ const App = () => {
               <img src="/images/IMG_9026.PNG" alt="Điều khoản" />
               <span>Điều khoản</span>
             </button>
-          </div>
+            </div>
+          </>
         )}
         {currentPage === 'terms' && (
-          <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+          <>
+            <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
             <button className="home-btn" onClick={() => handlePageChange('intro')}>✕</button>
             <h2>Điều khoản dịch vụ</h2>
             <h3>Về giao dịch</h3>
@@ -195,9 +200,9 @@ const App = () => {
             <h3>Về Credit và giới thiệu</h3>
             <p>Credit tên page, không được thiếu cre.</p>
             <p>Giới thiệu page cho khách khác phải có sự cho phép của page, giới thiệu với ai phải cho page check qua trước.</p>
-            <p>Vì là liên lạc trung gian qua staff nên vui lòng không tra hỏi thông tin đời tư của hoạ sĩ.</p>
-          </div>
-          <div className="buttons">
+              <p>Vì là liên lạc trung gian qua staff nên vui lòng không tra hỏi thông tin đời tư của hoạ sĩ.</p>
+            </div>
+            <div className="buttons">
             <button className="image-button" onClick={() => handlePageChange('menu')}>
               <img src="/images/IMG_9022.PNG" alt="Thực đơn" />
               <span>Thực đơn</span>

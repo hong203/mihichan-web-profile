@@ -717,7 +717,6 @@ th {
     padding: 5px 10px 40px 10px;
     max-height: 65vh;
     overflow-y: auto;
-    margin-bottom: 0.5rem;
   }
   .content-section h2 {
     font-size: 1.25em;
