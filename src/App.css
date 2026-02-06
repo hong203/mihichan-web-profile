@@ -405,10 +405,10 @@ html, body {
 }
 
 .game-filter-btn {
-  padding: 8px 30px;
+  padding: 8px 100px;
   background: transparent;
-  border: none;
-  color: #333;
+  border: 2px solid #6082B6;
+  color: #6082B6;
   font-family: 'KAIGE', sans-serif;
   font-size: 1em;
   font-weight: bold;
@@ -795,7 +795,7 @@ th {
     gap: 10px;
   }
   .game-filter-btn {
-    padding: 6px 25px;
+    padding: 6px 50px;
     font-size: 0.9em;
   }
   .home-btn {
