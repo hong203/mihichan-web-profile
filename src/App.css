@@ -305,11 +305,10 @@ html, body {
   font-size: 1em;
   font-weight: bold;
   text-align: center;
-  max-width: 110px;
+  max-width: 150px;
   line-height: 1.4;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  flex-shrink: 0;
 }
 
 .content-section {
@@ -697,11 +696,10 @@ th {
   }
   .queue-button span {
     font-size: 0.9em;
-    max-width: 90px;
+    max-width: 120px;
     line-height: 1.2;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    flex-shrink: 0;
   }
   .content-section {
     font-size: 1em;
