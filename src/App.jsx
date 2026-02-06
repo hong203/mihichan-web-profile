@@ -119,7 +119,6 @@ const App = () => {
                 <tr><td>TCG</td><td>char: 900, details 100 - 300</td></tr>
                 <tr><td>Ảnh thẻ</td><td>250</td></tr>
                 <tr><td>PV</td><td>950 - 1tr1</td></tr>
-                <tr><td>Design</td><td>mặt trước/ mặt sau: 300/ 1 mặt, mặt bên: 200/ 1 mặt</td></tr>
                 <tr><td>Tranh lễ</td><td>650</td></tr>
                 <tr><td>Illust</td><td>chest 300, half 450, thigh 900, full body 1tr2 - 1tr5</td></tr>
               </tbody>
