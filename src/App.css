@@ -558,7 +558,7 @@ th {
 @media (max-width: 768px) {
   .frame {
     width: 95%;
-    padding: 8px 10px 5px 10px;
+    padding: 8px 10px 15px 10px;
     max-height: none;
     height: auto;
     margin-top: 5px;
@@ -570,7 +570,7 @@ th {
     grid-template-columns: 1fr;
     gap: 5px;
     grid-template-rows: auto;
-    margin-bottom: 0;
+    margin-bottom: 8px;
   }
   .intro h1 {
     font-size: 1.2em;
@@ -611,8 +611,8 @@ th {
     gap: 10px;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 3px 0 0 0;
-    margin-top: 3px;
+    padding: 5px 0 0 0;
+    margin-top: 8px;
     width: 100%;
   }
   .buttons button {
