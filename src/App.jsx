@@ -77,7 +77,7 @@ const App = () => {
             </div>
             <button className="queue-button" onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}>
               <img src="/images/IMG_9041.PNG" alt="Lấy số chờ" />
-              <span>bấm để lấy số chờ</span>
+              <span>Bấm để lấy số chờ</span>
             </button>
           </>
         )}
