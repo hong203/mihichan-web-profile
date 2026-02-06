@@ -104,7 +104,7 @@ html, body {
   padding: 20px;
   border-radius: 15px;
   position: relative;
-  min-height: 90vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -329,10 +329,6 @@ html, body {
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-height: 70vh;
 }
 
 .content-section::-webkit-scrollbar {
@@ -546,13 +542,18 @@ button:hover {
 }
 
 .content-section {
-  margin-bottom: 2rem;
-  background: rgba(242, 236, 228, 0.9);
-  padding: 20px;
-  border-radius: 15px;
-  max-height: 60vh;
+  flex: 1;
   overflow-y: auto;
-  font-size: 1.2em;
+  color: #333;
+  position: relative;
+  font-size: 1.15em;
+  border: 2px solid #6082B6;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .carousel-section h3 {
@@ -617,9 +618,11 @@ th {
   .frame {
     width: 95%;
     padding: 5px 10px 20px 10px;
+    max-height: none;
+    height: auto;
     margin-top: 5px;
     margin-bottom: 5px;
-    min-height: 90vh;
+    min-height: 85vh;
     gap: 0;
   }
   .intro {
@@ -717,7 +720,7 @@ th {
     font-size: 1em;
     line-height: 1.5;
     padding: 5px 10px 20px 10px;
-    max-height: 65vh;
+    max-height: 85vh;
     overflow-y: auto;
   }
   .content-section h2 {
