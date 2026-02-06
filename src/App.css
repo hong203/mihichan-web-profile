@@ -406,9 +406,8 @@ html, body {
 
 .game-filter-btn {
   padding: 8px 100px;
-  background: transparent;
-  border: 2px solid #6082B6;
-  color: #6082B6;
+  background: #6082B6;
+  color: #EEE7DC;
   font-family: 'KAIGE', sans-serif;
   font-size: 1em;
   font-weight: bold;
@@ -416,11 +415,12 @@ html, body {
   cursor: url('/images/cursor.svg'), pointer;
   transition: all 0.3s ease;
   outline: none;
+  white-space: nowrap;
 }
 
 .game-filter-btn:hover {
-  background: rgba(96, 130, 182, 0.1);
-  transform: scale(1.05);
+  background: #6082B6;
+  transform: scale(1.1);
 }
 
 .game-filter-btn.active {
@@ -795,8 +795,12 @@ th {
     gap: 10px;
   }
   .game-filter-btn {
-    padding: 6px 50px;
+    padding: 10px 50px;
     font-size: 0.9em;
+    background: #6082B6;
+    color: #EEE7DC;
+    transform: scale(1.05);
+    text-align: center;
   }
   .home-btn {
     font-size: 1.25em;
