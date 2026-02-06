@@ -62,22 +62,24 @@ const App = () => {
     <div className="app">
       <div className="frame">
         {currentPage === 'intro' && (
-          <div className="intro">
-            <h1>ִִ ࣪✶⋆.˚Tiệm gà rán mihi chan˖°𓇼</h1>
-            <p>Commission: Closed.</p>
-            <div className="avatar" onClick={() => setShowSOS(true)}>
-              <img src="/images/imageavata.png" alt="Mihi Chan Avatar" />
-            </div>
-            <div className="intro-text">
-              <p>Chào mừng quý khách đến với tiệm gà rán của mihi chan, rất hân hạnh được phục vụ các bạn ʕ ᵔᴥᵔ ʔ !</p>
-              <p>Hãy để tiệm gà của mihi chan phác họa nên những gam màu rực rỡ cho nhân vật của riêng bạn.</p>
-              <p>Liên hệ với page qua <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">mihichan</a></p>
+          <>
+            <div className="intro">
+              <h1>ִִ ࣪✶⋆.˚Tiệm gà rán mihi chan˖°𓇼</h1>
+              <p>Commission: Closed.</p>
+              <div className="avatar" onClick={() => setShowSOS(true)}>
+                <img src="/images/imageavata.png" alt="Mihi Chan Avatar" />
+              </div>
+              <div className="intro-text">
+                <p>Chào mừng quý khách đến với tiệm gà rán của mihi chan, rất hân hạnh được phục vụ các bạn ʕ ᵔᴥᵔ ʔ !</p>
+                <p>Hãy để tiệm gà của mihi chan phác họa nên những gam màu rực rỡ cho nhân vật của riêng bạn.</p>
+                <p>Liên hệ với page qua <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">mihichan</a></p>
+              </div>
             </div>
             <button className="queue-button" onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}>
               <img src="/images/IMG_9041.PNG" alt="Lấy số chờ" />
               <span>bấm để lấy số chờ</span>
             </button>
-          </div>
+          </>
         )}
         {currentPage === 'menu' && (
           <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
