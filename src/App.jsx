@@ -169,7 +169,7 @@ const App = () => {
               <div key={category}>
                 <h3>{category}</h3>
                 {imgs.length === 0 ? (
-                  <p className="empty-category">Mihi chan quá lười để vẽ Sample</p>
+                  <p className="empty-category">Mihi chan quá lười để vẽ Sample :33</p>
                 ) : (
                   <div className="sample-grid">
                     {imgs.map(img => (
