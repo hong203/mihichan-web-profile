@@ -612,12 +612,12 @@ th {
 @media (max-width: 768px) {
   .frame {
     width: 95%;
-    padding: 8px 10px 35px 10px;
+    padding: 5px 10px 20px 10px;
     max-height: none;
     height: auto;
     margin-top: 5px;
     margin-bottom: 5px;
-    min-height: 100vh;
+    min-height: 85vh;
     gap: 0;
   }
   .intro {
