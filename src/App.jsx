@@ -156,13 +156,13 @@ const App = () => {
                 className={`game-filter-btn ${gameFilter === 'genshin' ? 'active' : ''}`}
                 onClick={() => setGameFilter('genshin')}
               >
-                Genshin Impact
+                GENSHIN IMPACT
               </button>
               <button 
                 className={`game-filter-btn ${gameFilter === 'honkai' ? 'active' : ''}`}
                 onClick={() => setGameFilter('honkai')}
               >
-                Honkai Star Rail
+                HONKAI STAR RAIL
               </button>
             </div>
             {Object.entries(getVisibleCategories()).map(([category, imgs]) => (
