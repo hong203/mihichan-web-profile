@@ -778,7 +778,6 @@ th {
   .game-filter-btn {
     padding: 15px 60px;
     background: #6082B6;
-    border: 2px solid #6082B6;
     color: #EEE7DC;
     font-family: 'KAIGE', sans-serif;
     font-size: 0.9em;
@@ -792,7 +791,6 @@ th {
     text-align: center;
   }
   .game-filter-btn:hover {
-    border-color: #000;
   }
   .home-btn {
     font-size: 1.25em;
