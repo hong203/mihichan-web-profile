@@ -178,20 +178,22 @@ const App = () => {
             <p>Vì là liên lạc trung gian qua staff nên vui lòng không tra hỏi thông tin đời tư của hoạ sĩ.</p>
           </div>
         )}
-        <div className="buttons">
-          <button className="image-button" onClick={() => handlePageChange('menu')}>
-            <img src="/images/IMG_9022.PNG" alt="Thực đơn" />
-            <span>Thực đơn</span>
-          </button>
-          <button className="image-button" onClick={() => handlePageChange('sample')}>
-            <img src="/images/IMG_9023.PNG" alt="Sample" />
-            <span>Sample</span>
-          </button>
-          <button className="image-button" onClick={() => handlePageChange('terms')}>
-            <img src="/images/IMG_9026.PNG" alt="Điều khoản" />
-            <span>Điều khoản</span>
-          </button>
-        </div>
+        {currentPage === 'intro' && (
+          <div className="buttons">
+            <button className="image-button" onClick={() => handlePageChange('menu')}>
+              <img src="/images/IMG_9022.PNG" alt="Thực đơn" />
+              <span>Thực đơn</span>
+            </button>
+            <button className="image-button" onClick={() => handlePageChange('sample')}>
+              <img src="/images/IMG_9023.PNG" alt="Sample" />
+              <span>Sample</span>
+            </button>
+            <button className="image-button" onClick={() => handlePageChange('terms')}>
+              <img src="/images/IMG_9026.PNG" alt="Điều khoản" />
+              <span>Điều khoản</span>
+            </button>
+          </div>
+        )}
       </div>
       {zoomedImage && (
         <div className="modal" onClick={() => setZoomedImage(null)}>
