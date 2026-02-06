@@ -130,6 +130,20 @@ const App = () => {
             <p>Phí private: 70%</p>
             <p>Phí thương mại x 5</p>
           </div>
+          <div className="buttons">
+            <button className="image-button" onClick={() => handlePageChange('menu')}>
+              <img src="/images/IMG_9022.PNG" alt="Thực đơn" />
+              <span>Thực đơn</span>
+            </button>
+            <button className="image-button" onClick={() => handlePageChange('sample')}>
+              <img src="/images/IMG_9023.PNG" alt="Sample" />
+              <span>Sample</span>
+            </button>
+            <button className="image-button" onClick={() => handlePageChange('terms')}>
+              <img src="/images/IMG_9026.PNG" alt="Điều khoản" />
+              <span>Điều khoản</span>
+            </button>
+          </div>
         )}
         {currentPage === 'sample' && (
           <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
@@ -144,6 +158,20 @@ const App = () => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="buttons">
+            <button className="image-button" onClick={() => handlePageChange('menu')}>
+              <img src="/images/IMG_9022.PNG" alt="Thực đơn" />
+              <span>Thực đơn</span>
+            </button>
+            <button className="image-button" onClick={() => handlePageChange('sample')}>
+              <img src="/images/IMG_9023.PNG" alt="Sample" />
+              <span>Sample</span>
+            </button>
+            <button className="image-button" onClick={() => handlePageChange('terms')}>
+              <img src="/images/IMG_9026.PNG" alt="Điều khoản" />
+              <span>Điều khoản</span>
+            </button>
           </div>
         )}
         {currentPage === 'terms' && (
@@ -176,6 +204,20 @@ const App = () => {
             <p>Credit tên page, không được thiếu cre.</p>
             <p>Giới thiệu page cho khách khác phải có sự cho phép của page, giới thiệu với ai phải cho page check qua trước.</p>
             <p>Vì là liên lạc trung gian qua staff nên vui lòng không tra hỏi thông tin đời tư của hoạ sĩ.</p>
+          </div>
+          <div className="buttons">
+            <button className="image-button" onClick={() => handlePageChange('menu')}>
+              <img src="/images/IMG_9022.PNG" alt="Thực đơn" />
+              <span>Thực đơn</span>
+            </button>
+            <button className="image-button" onClick={() => handlePageChange('sample')}>
+              <img src="/images/IMG_9023.PNG" alt="Sample" />
+              <span>Sample</span>
+            </button>
+            <button className="image-button" onClick={() => handlePageChange('terms')}>
+              <img src="/images/IMG_9026.PNG" alt="Điều khoản" />
+              <span>Điều khoản</span>
+            </button>
           </div>
         )}
         {currentPage === 'intro' && (
