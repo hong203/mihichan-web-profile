@@ -542,7 +542,7 @@ button:hover {
 }
 
 .content-section {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   background: rgba(242, 236, 228, 0.9);
   padding: 20px 20px 40px 20px;
   border-radius: 15px;
@@ -666,7 +666,7 @@ th {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 5px 0 0 0;
-    margin-top: 70px;
+    margin-top: 90px;
     width: 100%;
   }
   .buttons button {
@@ -717,6 +717,7 @@ th {
     padding: 5px 10px 40px 10px;
     max-height: 65vh;
     overflow-y: auto;
+    margin-bottom: 0.5rem;
   }
   .content-section h2 {
     font-size: 1.25em;
