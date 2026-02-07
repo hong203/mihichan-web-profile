@@ -338,6 +338,7 @@ a {
   padding: 15px;
   margin-bottom: 15px;
   cursor: url('/images/cursor_165000.svg'), pointer;
+  user-select: none;
 }
 
 .content-section::-webkit-scrollbar {

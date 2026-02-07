@@ -57,7 +57,7 @@ const App = () => {
         isDraggingScrollbar = true
         scrollbarStartY = e.clientY
         scrollStartTop = section.scrollTop
-        section.style.cursor = 'grab'
+        section.style.cursor = `url('/images/cursor_165000.svg'), grab`
       })
 
       document.addEventListener('mousemove', (e) => {
@@ -72,7 +72,7 @@ const App = () => {
       document.addEventListener('mouseup', () => {
         if (isDraggingScrollbar) {
           isDraggingScrollbar = false
-          section.style.cursor = ''
+          section.style.cursor = `url('/images/cursor_165000.svg'), pointer`
         }
       })
     })
