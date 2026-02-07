@@ -155,6 +155,7 @@ html, body {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #6082B6;
+  cursor: url('/images/cursor_165000.svg'), pointer;
 }
 
 .intro .intro-text {
@@ -252,6 +253,7 @@ a {
   object-fit: cover;
   border-radius: 8px;
   transition: filter 0.3s ease;
+  cursor: url('/images/cursor_165000.svg'), pointer;
 }
 
 .image-button:hover img {
@@ -306,6 +308,7 @@ a {
   border-radius: 8px;
   object-fit: cover;
   transition: filter 0.3s ease;
+  cursor: url('/images/cursor_165000.svg'), pointer;
 }
 
 .queue-button:hover img {
@@ -750,7 +753,7 @@ th {
   width: 100%;
   height: 300px;
   object-fit: contain;
-  cursor: pointer;
+  cursor: url('/images/cursor_165000.svg'), pointer;
   border-radius: 5px;
   background: #fff;
   padding: 5px;
