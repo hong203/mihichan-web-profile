@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 const App = () => {
@@ -7,6 +7,40 @@ const App = () => {
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [showSOS, setShowSOS] = useState(false)
   const [gameFilter, setGameFilter] = useState('all')
+
+  useEffect(() => {
+    const contentSections = document.querySelectorAll('.content-section')
+    contentSections.forEach(section => {
+      let isDown = false
+      let startY
+      let scrollTop
+
+      section.addEventListener('mousedown', (e) => {
+        isDown = true
+        startY = e.pageY - section.offsetTop
+        scrollTop = section.scrollTop
+        section.style.cursor = 'grabbing'
+      })
+
+      section.addEventListener('mouseleave', () => {
+        isDown = false
+        section.style.cursor = ''
+      })
+
+      section.addEventListener('mouseup', () => {
+        isDown = false
+        section.style.cursor = ''
+      })
+
+      section.addEventListener('mousemove', (e) => {
+        if (!isDown) return
+        e.preventDefault()
+        const y = e.pageY - section.offsetTop
+        const walk = (y - startY) * 2
+        section.scrollTop = scrollTop - walk
+      })
+    })
+  }, [])
 
   const handlePageChange = (page) => {
     setIsTransitioning(true)
