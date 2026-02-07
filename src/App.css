@@ -339,6 +339,7 @@ a {
   margin-bottom: 15px;
   cursor: url('/images/cursor_165000 (3) (1) (1) (1).svg'), pointer;
   user-select: none;
+  background: #EEE7DC;
 }
 
 .content-section::-webkit-scrollbar {
@@ -527,6 +528,7 @@ button:hover {
   flex-direction: column;
   width: 100%;
   max-height: 60vh;
+  background: #EEE7DC;
 }
 
 table {
@@ -676,6 +678,7 @@ th {
     padding: 5px 5px 10px 5px;
     max-height: 65vh;
     overflow-y: auto;
+    background: #EEE7DC;
   }
   .content-section h2 {
     font-size: 1.25em;
