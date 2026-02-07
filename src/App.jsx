@@ -35,14 +35,15 @@ const App = () => {
       dragState.currentSection = null
     }
 
+    // Create single handlers for reuse
+    const sectionHandlers = new Map()
+
     contentSections.forEach(section => {
       let isDown = false
       let startY
       let scrollTop
 
-      // Drag content to scroll
-      section.addEventListener('mousedown', (e) => {
-        // Check if clicking on scrollbar area
+      const handleMouseDown = (e) => {
         const isOnScrollbar = e.clientX > section.clientWidth - 20
         if (isOnScrollbar) {
           dragState.isDraggingScrollbar = true
@@ -57,24 +58,41 @@ const App = () => {
         startY = e.pageY - section.offsetTop
         scrollTop = section.scrollTop
         section.style.cursor = 'grabbing'
-      })
+      }
 
-      section.addEventListener('mouseleave', () => {
+      const handleMouseLeave = () => {
         isDown = false
-        section.style.cursor = ''
-      })
+        if (!dragState.isDraggingScrollbar) {
+          section.style.cursor = ''
+        }
+      }
 
-      section.addEventListener('mouseup', () => {
+      const handleMouseUp = () => {
         isDown = false
-        section.style.cursor = ''
-      })
+        if (!dragState.isDraggingScrollbar) {
+          section.style.cursor = ''
+        }
+      }
 
-      section.addEventListener('mousemove', (e) => {
+      const handleMouseMove = (e) => {
         if (!isDown) return
         e.preventDefault()
         const y = e.pageY - section.offsetTop
         const walk = (y - startY) * 2
         section.scrollTop = scrollTop - walk
+      }
+
+      section.addEventListener('mousedown', handleMouseDown)
+      section.addEventListener('mouseleave', handleMouseLeave)
+      section.addEventListener('mouseup', handleMouseUp)
+      section.addEventListener('mousemove', handleMouseMove)
+
+      // Store handlers for cleanup
+      sectionHandlers.set(section, {
+        handleMouseDown,
+        handleMouseLeave,
+        handleMouseUp,
+        handleMouseMove
       })
     })
 
@@ -82,6 +100,15 @@ const App = () => {
     document.addEventListener('mouseup', handleDocumentMouseUp)
 
     return () => {
+      // Cleanup section listeners
+      sectionHandlers.forEach((handlers, section) => {
+        section.removeEventListener('mousedown', handlers.handleMouseDown)
+        section.removeEventListener('mouseleave', handlers.handleMouseLeave)
+        section.removeEventListener('mouseup', handlers.handleMouseUp)
+        section.removeEventListener('mousemove', handlers.handleMouseMove)
+      })
+
+      // Cleanup document listeners
       document.removeEventListener('mousemove', handleDocumentMouseMove)
       document.removeEventListener('mouseup', handleDocumentMouseUp)
     }
