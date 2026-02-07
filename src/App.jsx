@@ -44,7 +44,7 @@ const App = () => {
       let scrollTop
 
       const handleMouseDown = (e) => {
-        const isOnScrollbar = e.clientX > section.clientWidth - 20
+        const isOnScrollbar = e.clientX > section.clientWidth - 15
         if (isOnScrollbar) {
           dragState.isDraggingScrollbar = true
           dragState.currentSection = section
