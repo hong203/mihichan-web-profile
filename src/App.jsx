@@ -10,6 +10,31 @@ const App = () => {
 
   useEffect(() => {
     const contentSections = document.querySelectorAll('.content-section')
+    const dragState = {
+      isDraggingScrollbar: false,
+      currentSection: null,
+      scrollbarStartY: 0,
+      scrollStartTop: 0
+    }
+
+    const handleDocumentMouseMove = (e) => {
+      if (!dragState.isDraggingScrollbar || !dragState.currentSection) return
+
+      const deltaY = e.clientY - dragState.scrollbarStartY
+      const section = dragState.currentSection
+      const scrollableHeight = section.scrollHeight - section.clientHeight
+      const trackHeight = section.clientHeight
+      section.scrollTop = dragState.scrollStartTop + (deltaY / trackHeight) * scrollableHeight
+    }
+
+    const handleDocumentMouseUp = () => {
+      if (dragState.isDraggingScrollbar && dragState.currentSection) {
+        dragState.currentSection.style.cursor = `url('public/images/cursor_165000 (3) (1) (1) (1).svg'), pointer`
+      }
+      dragState.isDraggingScrollbar = false
+      dragState.currentSection = null
+    }
+
     contentSections.forEach(section => {
       let isDown = false
       let startY
@@ -19,7 +44,14 @@ const App = () => {
       section.addEventListener('mousedown', (e) => {
         // Check if clicking on scrollbar area
         const isOnScrollbar = e.clientX > section.clientWidth - 20
-        if (isOnScrollbar) return
+        if (isOnScrollbar) {
+          dragState.isDraggingScrollbar = true
+          dragState.currentSection = section
+          dragState.scrollbarStartY = e.clientY
+          dragState.scrollStartTop = section.scrollTop
+          section.style.cursor = `url('public/images/cursor_165000 (3) (1) (1) (1).svg'), grab`
+          return
+        }
         
         isDown = true
         startY = e.pageY - section.offsetTop
@@ -44,38 +76,15 @@ const App = () => {
         const walk = (y - startY) * 2
         section.scrollTop = scrollTop - walk
       })
-
-      // Custom scrollbar drag handling
-      let isDraggingScrollbar = false
-      let scrollbarStartY = 0
-      let scrollStartTop = 0
-
-      section.addEventListener('mousedown', (e) => {
-        const isOnScrollbar = e.clientX > section.clientWidth - 20
-        if (!isOnScrollbar) return
-
-        isDraggingScrollbar = true
-        scrollbarStartY = e.clientY
-        scrollStartTop = section.scrollTop
-        section.style.cursor = `url('/images/cursor_165000 (3) (1) (1) (1).svg'), grab`
-      })
-
-      document.addEventListener('mousemove', (e) => {
-        if (!isDraggingScrollbar) return
-
-        const deltaY = e.clientY - scrollbarStartY
-        const scrollableHeight = section.scrollHeight - section.clientHeight
-        const trackHeight = section.clientHeight
-        section.scrollTop = scrollStartTop + (deltaY / trackHeight) * scrollableHeight
-      })
-
-      document.addEventListener('mouseup', () => {
-        if (isDraggingScrollbar) {
-          isDraggingScrollbar = false
-          section.style.cursor = `url('/images/cursor_165000 (3) (1) (1) (1).svg'), pointer`
-        }
-      })
     })
+
+    document.addEventListener('mousemove', handleDocumentMouseMove)
+    document.addEventListener('mouseup', handleDocumentMouseUp)
+
+    return () => {
+      document.removeEventListener('mousemove', handleDocumentMouseMove)
+      document.removeEventListener('mouseup', handleDocumentMouseUp)
+    }
   }, [])
 
   const handlePageChange = (page) => {
