@@ -67,7 +67,7 @@ html, body {
   padding: 0;
   overflow: hidden;
   height: 100%;
-  cursor: url('/images/cursor_165000.svg'), auto;
+  cursor: url('public/images/cursor_165000.svg'), auto;
 }
 
 @keyframes fadeIn {
@@ -94,7 +94,7 @@ html, body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  cursor: url('/images/cursor_165000.svg'), auto;
+  cursor: url('public/images/cursor_165000.svg'), auto;
 }
 
 .frame {
@@ -146,7 +146,7 @@ html, body {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
 }
 
 .intro .avatar img {
@@ -155,7 +155,7 @@ html, body {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #6082B6;
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
 }
 
 .intro .intro-text {
@@ -177,7 +177,7 @@ html, body {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
 }
 
 .intro .intro-text a:hover {
@@ -186,7 +186,7 @@ html, body {
 }
 
 a {
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
 }
 
 .buttons {
@@ -206,7 +206,7 @@ a {
   border: none;
   padding: 12px 20px;
   border-radius: 10px;
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
   font-size: 1.1em;
   transition: font-size 0.3s ease;
   text-align: center;
@@ -233,7 +233,7 @@ a {
   background: transparent;
   border: none;
   outline: none;
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
   transition: transform 0.3s ease;
   -webkit-appearance: none;
   appearance: none;
@@ -253,7 +253,7 @@ a {
   object-fit: cover;
   border-radius: 8px;
   transition: filter 0.3s ease;
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
 }
 
 .image-button:hover img {
@@ -289,7 +289,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
   border-radius: 10px;
   transition: transform 0.3s ease;
   width: fit-content;
@@ -308,7 +308,7 @@ a {
   border-radius: 8px;
   object-fit: cover;
   transition: filter 0.3s ease;
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
 }
 
 .queue-button:hover img {
@@ -337,7 +337,7 @@ a {
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 15px;
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
   user-select: none;
 }
 
@@ -384,7 +384,7 @@ a {
   outline: none;
   color: #6082B6;
   font-size: 1em;
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
   padding: 6px 8px;
   transition: transform 0.3s ease;
   z-index: 10;
@@ -422,7 +422,7 @@ a {
   font-size: 1.5em;
   font-weight: bold;
   border-radius: 8px;
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
   transition: all 0.3s ease;
   outline: none;
   white-space: nowrap;
@@ -492,7 +492,7 @@ button {
   border: 2px solid #6082B6;
   padding: 0;
   border-radius: 50%;
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
   font-size: 1.2em;
   color: #6082B6;
   transition: background 0.3s, transform 0.2s;
@@ -714,7 +714,7 @@ th {
     font-size: 0.9em;
     font-weight: bold;
     border-radius: 8px;
-    cursor: url('/images/cursor_165000.svg'), pointer;
+    cursor: url('public/images/cursor_165000.svg'), pointer;
     transition: all 0.3s ease;
     outline: none;
     white-space: nowrap;
@@ -754,7 +754,7 @@ th {
   width: 100%;
   height: 300px;
   object-fit: contain;
-  cursor: url('/images/cursor_165000.svg'), pointer;
+  cursor: url('public/images/cursor_165000.svg'), pointer;
   border-radius: 5px;
   background: #fff;
   padding: 5px;
@@ -926,3 +926,4 @@ th {
   font-weight: bold;
   letter-spacing: 2px;
 }
+
