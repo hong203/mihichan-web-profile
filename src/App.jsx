@@ -29,7 +29,7 @@ const App = () => {
 
     const handleDocumentMouseUp = () => {
       if (dragState.isDraggingScrollbar && dragState.currentSection) {
-        dragState.currentSection.style.cursor = `url('/images/cursor_165000 (3) (1) (1) (1).svg'), pointer`
+        dragState.currentSection.style.cursor = `url('/images/cursor_165000.svg'), pointer`
       }
       dragState.isDraggingScrollbar = false
       dragState.currentSection = null
@@ -50,7 +50,7 @@ const App = () => {
           dragState.currentSection = section
           dragState.scrollbarStartY = e.clientY
           dragState.scrollStartTop = section.scrollTop
-          section.style.cursor = `url('/images/cursor_165000 (3) (1) (1) (1).svg'), grab`
+          section.style.cursor = `url('/images/cursor_165000.svg'), grab`
           return
         }
         
