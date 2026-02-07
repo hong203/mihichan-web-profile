@@ -15,7 +15,12 @@ const App = () => {
       let startY
       let scrollTop
 
+      // Drag content to scroll
       section.addEventListener('mousedown', (e) => {
+        // Check if clicking on scrollbar area
+        const isOnScrollbar = e.clientX > section.clientWidth - 20
+        if (isOnScrollbar) return
+        
         isDown = true
         startY = e.pageY - section.offsetTop
         scrollTop = section.scrollTop
@@ -38,6 +43,37 @@ const App = () => {
         const y = e.pageY - section.offsetTop
         const walk = (y - startY) * 2
         section.scrollTop = scrollTop - walk
+      })
+
+      // Custom scrollbar drag handling
+      let isDraggingScrollbar = false
+      let scrollbarStartY = 0
+      let scrollStartTop = 0
+
+      section.addEventListener('mousedown', (e) => {
+        const isOnScrollbar = e.clientX > section.clientWidth - 20
+        if (!isOnScrollbar) return
+
+        isDraggingScrollbar = true
+        scrollbarStartY = e.clientY
+        scrollStartTop = section.scrollTop
+        section.style.cursor = 'grab'
+      })
+
+      document.addEventListener('mousemove', (e) => {
+        if (!isDraggingScrollbar) return
+
+        const deltaY = e.clientY - scrollbarStartY
+        const scrollableHeight = section.scrollHeight - section.clientHeight
+        const trackHeight = section.clientHeight
+        section.scrollTop = scrollStartTop + (deltaY / trackHeight) * scrollableHeight
+      })
+
+      document.addEventListener('mouseup', () => {
+        if (isDraggingScrollbar) {
+          isDraggingScrollbar = false
+          section.style.cursor = ''
+        }
       })
     })
   }, [])
