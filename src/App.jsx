@@ -191,14 +191,16 @@ const App = () => {
                 <p>Liên hệ với page qua <a href="https://www.facebook.com/profile.php?id=61585840063897" target="_blank" rel="noopener noreferrer">Mihi chan</a></p>
               </div>
             </div>
-            <button className="queue-button" onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}>
-              <img src="/images/IMG_9041.PNG" alt="Lấy số chờ" />
-              <span>Bấm để lấy số chờ</span>
-            </button>
-            <button className="queue-button" onClick={() => handlePageChange('about')}>
-              <img src="/images/IMG_9063.PNG" alt="About us" />
-              <span>About us</span>
-            </button>
+            <div className="queue-buttons-wrapper">
+              <button className="queue-button" onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}>
+                <img src="/images/IMG_9041.PNG" alt="Lấy số chờ" />
+                <span>Bấm để lấy số chờ</span>
+              </button>
+              <button className="about-button" onClick={() => handlePageChange('about')}>
+                <img src="/images/IMG_9063.PNG" alt="About us" />
+                <span>About us</span>
+              </button>
+            </div>
           </>
         )}
         {currentPage === 'menu' && (
@@ -334,14 +336,18 @@ const App = () => {
             <button className="home-btn" onClick={() => setCurrentAboutMember(null)}>✕</button>
             {aboutMembers.find(m => m.id === currentAboutMember) && (
               <>
-                <div className="about-member-avatar">
-                  <img src={aboutMembers.find(m => m.id === currentAboutMember).image} alt={aboutMembers.find(m => m.id === currentAboutMember).label} />
-                </div>
-                <h2>{aboutMembers.find(m => m.id === currentAboutMember).label}</h2>
-                <div className="about-member-description">
-                  {aboutMembers.find(m => m.id === currentAboutMember).description.split('\n').map((line, idx) => (
-                    <p key={idx}>{line}</p>
-                  ))}
+                <div className="about-detail-wrapper">
+                  <div className="about-member-avatar">
+                    <img src={aboutMembers.find(m => m.id === currentAboutMember).image} alt={aboutMembers.find(m => m.id === currentAboutMember).label} />
+                  </div>
+                  <div className="about-member-content">
+                    <h2>{aboutMembers.find(m => m.id === currentAboutMember).label}</h2>
+                    <div className="about-member-description">
+                      {aboutMembers.find(m => m.id === currentAboutMember).description.split('\n').map((line, idx) => (
+                        <p key={idx}>{line}</p>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </>
             )}
