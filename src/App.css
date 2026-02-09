@@ -1081,6 +1081,7 @@ th {
   .about-member-label {
     font-size: 0.85em;
     padding: 8px;
+    opacity: 1;
   }
 }
 
