@@ -7,6 +7,7 @@ const App = () => {
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [showSOS, setShowSOS] = useState(false)
   const [gameFilter, setGameFilter] = useState('all')
+  const [currentAboutMember, setCurrentAboutMember] = useState(null)
 
   useEffect(() => {
     const contentSections = document.querySelectorAll('.content-section')
@@ -138,6 +139,33 @@ const App = () => {
     return sampleCategories[gameFilter] || {}
   }
 
+  const aboutMembers = [
+    {
+      id: 'admin3125',
+      image: '/images/626000983_122112474837194668_260994134633122175_n.jpg',
+      label: 'Admin 3125',
+      description: 'Người điều hướng content page, update waitlist, dỗ artist (không nín thì chích điện), đzai số một thế giới, rep ib của khách như đang dỗ khách, khách nào cũng là cục cưng của 3125！\nQuote: chỉ cần ngươi vui ta liền vẻ ~'
+    },
+    {
+      id: 'admin34',
+      image: '/images/626061030_122112474879194668_8106129427359772503_n.jpg',
+      label: 'Admin 34',
+      description: 'Stalker số một của artist, hỏi tranh nào gần như cũng lôi ra được. Là người trực tương tác chính của page, bị vắt nghĩ content, hỗ trợ công việc cho 2 ad còn lại khi họ bận, còn lại vô dụng đa số thời gian. Chỉ bị gọi lên khi cần gắn ấn thủy và nghĩ cap đăng bài. Là chủ tiệm tạp hóa ven đường.\nQuote: muốn cơ cấu thì cứ tìm anh ;3JL'
+    },
+    {
+      id: 'mihichan',
+      image: '/images/626257203_122112474741194668_567190496570626637_n.jpg',
+      label: 'Artist: Mihichan',
+      description: 'Artist duy nhất của nhà, thích ăn dô li bi, hở ra đòi 10 tỷ, được cưng như trứng vàng, hứng như hứng hoa, không hề có chuyện bị ngược đãi! Nô lệ tư bản, bị vắt khô tới 99 tuổi, 100 tuổi mà nằm thì dùng cầu cơ gọi dậy vẽ tiếp. Bình thường sẽ không phải người giao tiếp và tương tác với bên ngoài.\nQuote: hãy donate cho mihi chan để cô ấy ko phải vẽ nữa!'
+    },
+    {
+      id: 'adminde',
+      image: '/images/628235245_122112474789194668_5829119856214250656_n.jpg',
+      label: 'Admin Dế',
+      description: 'Admin cội nguồn của page, lo việc viết điều khoản, bảng giá, xếp lịch trình và tổng hợp thông tin khách. Người dí artist no1, là người trực inb chính của page. Ngày ấy, nếu không có bản mặt dày như tường thành của ad Dế, giờ chúng ta đã không có một ngôi nhà xây nên cho Mihichan, hãy cảm ơn tui đi !!!! Là một fan bts toàn thời gian nên Dế rất dễ thương dễ nch thích nàm quen luôn chào đón các quý khách đến vứi mihi chan !\nQuote: fan girl ăn ngon mặc ấm vui buồn hihihaha vì 7 người đàn ông hàn quốc'
+    }
+  ]
+
   const nextTab = () => {
     setCurrentTab((prev) => (prev + 1) % 3)
   }
@@ -166,6 +194,10 @@ const App = () => {
             <button className="queue-button" onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}>
               <img src="/images/IMG_9041.PNG" alt="Lấy số chờ" />
               <span>Bấm để lấy số chờ</span>
+            </button>
+            <button className="queue-button" onClick={() => handlePageChange('about')}>
+              <img src="/images/IMG_9063.PNG" alt="About us" />
+              <span>About us</span>
             </button>
           </>
         )}
@@ -281,6 +313,38 @@ const App = () => {
             <p>Credit tên page, không được thiếu cre.</p>
             <p>Giới thiệu page cho khách khác phải có sự cho phép của page, giới thiệu với ai phải cho page check qua trước.</p>
             <p>Vì là liên lạc trung gian qua staff nên vui lòng không tra hỏi thông tin đời tư của hoạ sĩ.</p>
+          </div>
+        )}
+        {currentPage === 'about' && !currentAboutMember && (
+          <div className={`content-section ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+            <button className="home-btn" onClick={() => handlePageChange('intro')}>✕</button>
+            <h2>About us</h2>
+            <div className="about-grid">
+              {aboutMembers.map((member) => (
+                <div key={member.id} className="about-member-card" onClick={() => setCurrentAboutMember(member.id)}>
+                  <img src={member.image} alt={member.label} className="about-member-image" />
+                  <div className="about-member-label">{member.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        {currentPage === 'about' && currentAboutMember && (
+          <div className={`content-section about-detail ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+            <button className="home-btn" onClick={() => setCurrentAboutMember(null)}>✕</button>
+            {aboutMembers.find(m => m.id === currentAboutMember) && (
+              <>
+                <div className="about-member-avatar">
+                  <img src={aboutMembers.find(m => m.id === currentAboutMember).image} alt={aboutMembers.find(m => m.id === currentAboutMember).label} />
+                </div>
+                <h2>{aboutMembers.find(m => m.id === currentAboutMember).label}</h2>
+                <div className="about-member-description">
+                  {aboutMembers.find(m => m.id === currentAboutMember).description.split('\n').map((line, idx) => (
+                    <p key={idx}>{line}</p>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         )}
         <div className="buttons">
