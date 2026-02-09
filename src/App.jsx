@@ -87,6 +87,14 @@ const App = () => {
     }, 150)
   }
 
+  const handleAboutMemberSelect = (memberId) => {
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentAboutMember(memberId)
+      setIsTransitioning(false)
+    }, 150)
+  }
+
   const sampleCategories = {
     genshin: {
       'Commission design Genshin Impact': [
@@ -323,7 +331,7 @@ const App = () => {
             <h2>About us</h2>
             <div className="about-grid">
               {aboutMembers.map((member) => (
-                <div key={member.id} className="about-member-card" onClick={() => setCurrentAboutMember(member.id)}>
+                <div key={member.id} className="about-member-card" onClick={() => handleAboutMemberSelect(member.id)}>
                   <img src={member.image} alt={member.label} className="about-member-image" />
                   <div className="about-member-label">{member.label}</div>
                 </div>
