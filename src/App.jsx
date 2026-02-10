@@ -11,72 +11,101 @@ const App = () => {
 
   useEffect(() => {
     const contentSections = document.querySelectorAll('.content-section')
-    contentSections.forEach(section => {
-      let isDown = false
-      let startY
-      let scrollTop
+    const scrollStates = new Map() // Track state per section
 
-      // Drag content to scroll
-      section.addEventListener('mousedown', (e) => {
-        // Check if clicking on scrollbar area
-        const isOnScrollbar = e.clientX > section.clientWidth - 20
-        if (isOnScrollbar) return
-        
-        isDown = true
-        startY = e.pageY - section.offsetTop
-        scrollTop = section.scrollTop
-        section.style.cursor = 'grabbing'
-      })
-
-      section.addEventListener('mouseleave', () => {
-        isDown = false
-        section.style.cursor = ''
-      })
-
-      section.addEventListener('mouseup', () => {
-        isDown = false
-        section.style.cursor = ''
-      })
-
-      section.addEventListener('mousemove', (e) => {
-        if (!isDown) return
-        e.preventDefault()
-        const y = e.pageY - section.offsetTop
-        const walk = (y - startY) * 2
-        section.scrollTop = scrollTop - walk
-      })
-
-      // Custom scrollbar drag handling
-      let isDraggingScrollbar = false
-      let scrollbarStartY = 0
-      let scrollStartTop = 0
-
-      section.addEventListener('mousedown', (e) => {
-        const isOnScrollbar = e.clientX > section.clientWidth - 20
-        if (!isOnScrollbar) return
-
-        isDraggingScrollbar = true
-        scrollbarStartY = e.clientY
-        scrollStartTop = section.scrollTop
+    const handleMouseDown = (section) => (e) => {
+      const isOnScrollbar = e.clientX > section.clientWidth - 20
+      
+      const state = scrollStates.get(section) || {}
+      
+      if (isOnScrollbar) {
+        // Scrollbar drag
+        state.isDraggingScrollbar = true
+        state.scrollbarStartY = e.clientY
+        state.scrollStartTop = section.scrollTop
         section.style.cursor = `url('/images/cursor_165000 (3) (1) (1) (1).svg'), grab`
-      })
+      } else {
+        // Content drag
+        state.isDown = true
+        state.startY = e.pageY - section.offsetTop
+        state.scrollTop = section.scrollTop
+        section.style.cursor = 'grabbing'
+      }
+      scrollStates.set(section, state)
+    }
 
-      document.addEventListener('mousemove', (e) => {
-        if (!isDraggingScrollbar) return
+    const handleMouseMove = (section) => (e) => {
+      const state = scrollStates.get(section)
+      if (!state) return
 
-        const deltaY = e.clientY - scrollbarStartY
+      if (state.isDraggingScrollbar) {
+        const deltaY = e.clientY - state.scrollbarStartY
         const scrollableHeight = section.scrollHeight - section.clientHeight
         const trackHeight = section.clientHeight
-        section.scrollTop = scrollStartTop + (deltaY / trackHeight) * scrollableHeight
-      })
+        section.scrollTop = state.scrollStartTop + (deltaY / trackHeight) * scrollableHeight
+      } else if (state.isDown) {
+        const y = e.pageY - section.offsetTop
+        const walk = (y - state.startY) * 2
+        section.scrollTop = state.scrollTop - walk
+      }
+    }
 
-      document.addEventListener('mouseup', () => {
-        if (isDraggingScrollbar) {
-          isDraggingScrollbar = false
-          section.style.cursor = `url('/images/cursor_165000 (3) (1) (1) (1).svg'), pointer`
+    const handleMouseUp = (section) => (e) => {
+      const state = scrollStates.get(section)
+      if (!state) return
+
+      if (state.isDraggingScrollbar) {
+        state.isDraggingScrollbar = false
+        section.style.cursor = `url('/images/cursor_165000 (3) (1) (1) (1).svg'), pointer`
+      } else if (state.isDown) {
+        state.isDown = false
+        section.style.cursor = ''
+      }
+      scrollStates.set(section, state)
+    }
+
+    const handleMouseLeave = (section) => (e) => {
+      const state = scrollStates.get(section)
+      if (state) {
+        state.isDown = false
+        section.style.cursor = ''
+        scrollStates.set(section, state)
+      }
+    }
+
+    contentSections.forEach(section => {
+      scrollStates.set(section, {})
+      section.addEventListener('mousedown', handleMouseDown(section))
+      section.addEventListener('mousemove', handleMouseMove(section), { passive: true })
+      section.addEventListener('mouseup', handleMouseUp(section))
+      section.addEventListener('mouseleave', handleMouseLeave(section))
+    })
+
+    // Global mouse up to handle drag outside section
+    const globalMouseUp = () => {
+      contentSections.forEach(section => {
+        const state = scrollStates.get(section)
+        if (state && (state.isDown || state.isDraggingScrollbar)) {
+          state.isDown = false
+          state.isDraggingScrollbar = false
+          section.style.cursor = ''
+          scrollStates.set(section, state)
         }
       })
-    })
+    }
+
+    document.addEventListener('mouseup', globalMouseUp)
+
+    // Cleanup
+    return () => {
+      contentSections.forEach(section => {
+        section.removeEventListener('mousedown', handleMouseDown(section))
+        section.removeEventListener('mousemove', handleMouseMove(section))
+        section.removeEventListener('mouseup', handleMouseUp(section))
+        section.removeEventListener('mouseleave', handleMouseLeave(section))
+      })
+      document.removeEventListener('mouseup', globalMouseUp)
+    }
   }, [])
 
   const handlePageChange = (page) => {
